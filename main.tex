@@ -1,0 +1,25 @@
+\documentclass[12pt,a4paper]{report}
+\input{header}
+
+% \includeonly{sections/2_generale}
+
+\begin{document}
+
+\include{frontespizio}
+
+\include{sections/0_abstract}
+
+\tableofcontents
+
+\include{sections/1_introduzione}
+\include{sections/2_generale}
+\include{sections/3_modelli}
+\include{sections/4_risultati}
+\include{sections/5_conclusione}
+
+\addcontentsline{toc}{chapter}{Bibliografia}
+%\bibliographystyle{unsrt}
+\bibliographystyle{agsm}
+\bibliography{bibliography}
+
+\end{document}
