@@ -36,36 +36,33 @@ Nello specifico la penisola della Kamchatka è costituita da tre fronti vulcanic
 
 ...
 
-
+\newpage
 \section{Terremoto M8.8 del 29/07/2025}
 Il 29 luglio 2025 (30 luglio alle 11:24 ora locale) si è verificato un terremoto \(M_w = 8.8\), tra i 10 più potenti mai registrati, prodotto dalla stessa zona di subduzione che generò nel 1952 un terremoto \(M_w = 9.0\).
-Terremoti di questa magnitudo si verificano in prossimità di zone di subduzione e sono generati da una faglia detta di \textit{mega sovrascorrimento} (\textit{megathrust}). Questa separa due placche convergenti, quella del Pacifico che subduce a quella nordamericana \citep{jk0}.
+Terremoti di questa magnitudo si verificano in prossimità di zone di subduzione e sono generati da una faglia detta di \textit{mega sovrascorrimento} (\textit{megathrust}). Questa separa due placche convergenti, quella del Pacifico che subduce a quella nordamericana \citep{hubbardstrikeskamchatka}.
 
-Terremoti di questa portata sono eventi piuttosto rari. In un loro articolo, \citet{jk1} prendono in considerazione i diciassette terremoti di magnitudo \(M_w=8.5\) e maggiori avvenuti dal 1900 ad oggi. La loro analisi prosegue cercando una dipendenza tra questi eventi e i \textit{foreshock}, terremoti di minore entità che ne precedono uno maggiore, in particolare ricercando la correlazione tra foreshock di magnitudo \(M_w=7+\) e gli eventi di magnitudo  \(M_w=8.5+\).
-Ne risulta però che la correlazione è di \(\sim1 \%\), mostrando che questi eventi sono difficili da prevedere attraverso l'analisi dei foreshock.
+Terremoti di questa portata sono eventi piuttosto rari. In un loro articolo, \citet{hubbardfirstlook} prendono in considerazione i diciassette terremoti di magnitudo \(M_w \ge 8.5\) avvenuti dal 1900 ad oggi. La loro analisi prosegue cercando una dipendenza tra questi eventi e i \textit{foreshock}, terremoti di minore entità che ne precedono uno maggiore, in particolare ricercando la correlazione tra foreshock di magnitudo \(M_w \ge 7\) e gli eventi di magnitudo  \(M_w \ge 8.5\).
+Ne risulta però che la correlazione è di \(\sim1 \%\), mostrando che questi eventi sono difficili da prevedere attraverso l'analisi dei foreshock. 
 
+Terremoti di questo tipo, proprio per la loro sporadicità, sono un importante oggetto di ricerca. L'ente statunitense United States Geological Survey (USGS) si è occupato da subito dello studio del terremoto, calcolando gli spostamenti prodotti e il momento sismico tramite un modello \textit{finite fault} (a faglia finita) \citep{usgs2025qw60finitefault}.
+Modelli di questo tipo utilizzano dati riguardanti il movimento del suolo causato dal terremoto (come lo studio di onde sismiche rilevate da stazioni sismografiche e di spostamenti della superficie terrestre) riuscendo  a rappresentare la dimensione della faglia e l'intensità dello slip (spostamento della faccia superiore rispetto alla faccia inferiore del piano di faglia) lungo di essa \citep{usgs_finite_fault}.
+Nell'analisi del terremoto in questione il USGS ha analizzato onde sismiche raccolte da stazioni sismografiche situate in tutto il mondo e ha aggiornato il modello nelle settimane seguenti. Il primo miglioramento del modello è stato realizzato andando ad implementare dati provenienti da radar satellitari, raccolti utilizzando il metodo inSAR (Interferometric Synthetic Aperture Radar) \citep{hubbard2025kamchatkaupdates}. Questo metodo consiste nell'utilizzo di onde radio o microonde a una specifica lunghezza d'onda inviate da un satellite sulla superficie terrestre. Diversi punti della superficie riflettono le onde con una fase diversa, che può essere ricavata misurando l'ampiezza dell'onda e può essere rappresentata tramite una mappa di fase. Poiché un terremoto è un evento in grado di andare a modificare la superficie terrestre, è possibile confrontare due immagini ottenute dal satellite, una prima e uno dopo l'evento sismico, ottenendo informazioni sugli spostamenti avvenuti \citep{hubbard2023inSAR}.
 
-
+Un'ulteriore miglioramento nel modello è stato fatto andando a considerare che la geometria della faglia è quella di una superficie curva e non piana. Per questo motivo il piano della faglia è stato suddiviso in tre segmenti con diverso dip (angolo di immersione). Questo è più piccolo lungo la faglia e cresce in direzione nord-ovest, come mostrato in Fig.\ref{fig:basemap} \citep{hubbard2025aftershockupdate}.
+Nello specifico questa figura mostra una proiezione della distribuzione superficiale dello slip. Il valore massimo raggiunto dallo slip è di \( \sim\)\qty{40}{meter}. In generale risulta abbastanza contenuto tra la costa e la faglia, senza raggiungere la penisola.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{graphics/wrap_unwrap.png}
-    \caption{Caption}
-    \label{fig:placeholder}
+    \includegraphics[width=0.75\linewidth]{graphics/basemap.png}
+    \caption{Proiezione superficiale dello slip per il terremoto del 29 luglio 2025 in Kamchatka. La scala di colore dal bianco al bli indica l'intensità dello slip. La linea bianca indica il confine tra due placche [preso da \citep{usgs2025qw60finitefault}].}
+    \label{fig:basemap}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\linewidth]{graphics/00.png}
+    \includegraphics[width=0.7\linewidth]{graphics/slip.png}
     \caption{Caption}
-    \label{fig:00}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\linewidth]{graphics/01.png}
-    \caption{Caption}
-    \label{fig:01}
+    \label{fig:slip}
 \end{figure}
 
 \begin{figure}[H]
