@@ -34,7 +34,7 @@ L'arco delle Curili-Kamchatka è un esempio di attività vulcanica generata dall
 
 Nello specifico la penisola della Kamchatka è costituita da tre fronti vulcanici:: lo Sredinny Range, l’Eastern Volcanic Front (EVF) e la Central Kamchatka Depression (CKD).
 
-...
+... TODO
 
 \newpage
 \section{Terremoto M8.8 del 29/07/2025}
@@ -48,13 +48,14 @@ Terremoti di questo tipo, proprio per la loro sporadicità, sono un importante o
 Modelli di questo tipo utilizzano dati riguardanti il movimento del suolo causato dal terremoto (come lo studio di onde sismiche rilevate da stazioni sismografiche e di spostamenti della superficie terrestre) riuscendo  a rappresentare la dimensione della faglia e l'intensità dello slip (spostamento della faccia superiore rispetto alla faccia inferiore del piano di faglia) lungo di essa \citep{usgs_finite_fault}.
 Nell'analisi del terremoto in questione il USGS ha analizzato onde sismiche raccolte da stazioni sismografiche situate in tutto il mondo e ha aggiornato il modello nelle settimane seguenti. Il primo miglioramento del modello è stato realizzato andando ad implementare dati provenienti da radar satellitari, raccolti utilizzando il metodo inSAR (Interferometric Synthetic Aperture Radar) \citep{hubbard2025kamchatkaupdates}. Questo metodo consiste nell'utilizzo di onde radio o microonde a una specifica lunghezza d'onda inviate da un satellite sulla superficie terrestre. Diversi punti della superficie riflettono le onde con una fase diversa, che può essere ricavata misurando l'ampiezza dell'onda e può essere rappresentata tramite una mappa di fase. Poiché un terremoto è un evento in grado di andare a modificare la superficie terrestre, è possibile confrontare due immagini ottenute dal satellite, una prima e uno dopo l'evento sismico, ottenendo informazioni sugli spostamenti avvenuti \citep{hubbard2023inSAR}.
 
+
 Un'ulteriore miglioramento nel modello è stato fatto andando a considerare che la geometria della faglia è quella di una superficie curva e non piana. Per questo motivo il piano della faglia è stato suddiviso in tre segmenti con diverso dip (angolo di immersione). Questo è più piccolo lungo la faglia e cresce in direzione nord-ovest, come mostrato in Fig.\ref{fig:basemap} \citep{hubbard2025aftershockupdate}.
 Nello specifico questa figura mostra una proiezione della distribuzione superficiale dello slip. Il valore massimo raggiunto dallo slip è di \( \sim\)\qty{40}{\meter}. In generale risulta abbastanza contenuto tra la costa e la faglia, senza raggiungere la penisola.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\linewidth]{graphics/basemap.png}
-    \caption{Proiezione superficiale dello slip per il terremoto del 29 luglio 2025 in Kamchatka. La scala di colore dal bianco al bli indica l'intensità dello slip. La linea bianca indica il confine tra due placche [preso da \citep{usgs2025qw60finitefault}].}
+    \caption{Proiezione superficiale dello slip per il terremoto del 29 luglio 2025 in Kamchatka. La scala di colore dal bianco al blu indica l'intensità dello slip. La linea bianca indica il confine tra due placche [preso da \citep{usgs2025qw60finitefault}].}
     \label{fig:basemap}
 \end{figure}
 
