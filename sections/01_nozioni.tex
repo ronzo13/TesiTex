@@ -1,6 +1,6 @@
 \chapter{Nozioni}
 
-In questo capitolo si trattano in breve alcuni concetti ripresi spesso in questa tesi. Al fine di evitare che queste nozioni vengano date successivamente, mentre si approfondiscono altri argomenti, si è deciso di realizzare questo capitolo introduttivo che possa aiutare il lettore in una più chiara e lineare comprensione del testo. Nel primo paragrafo si spiega brevemente cosa sia una faglia, la sua geometria e le diverse tipologie.
+In questo capitolo si discutono alcuni concetti trattati in questa tesi. Al fine di evitare che queste nozioni vengano date successivamente, mentre si approfondiscono altri argomenti, si è deciso di realizzare questo capitolo introduttivo che possa aiutare il lettore in una più chiara e lineare comprensione del testo. Nel primo paragrafo si spiega brevemente cosa sia una faglia, la sua geometria e le diverse tipologie possibili.
 Nel secondo paragrafo vengono introdotti i principi della teoria tettonica delle placche, che descrive il movimento e l'interazione delle placche in cui è suddivisa la litosfera.
 Grazie a questa teoria è possibile spiegare una vasta gamma di fenomeni, tra cui l'attività sismica, la formazioni di archi vulcanici e fosse oceaniche, processi di orogenesi. Nel corso della prima parte di questa tesi verrà fatto più volte riferimento a questa teoria.
 
@@ -8,13 +8,13 @@ Grazie a questa teoria è possibile spiegare una vasta gamma di fenomeni, tra cu
 Un terremoto ha origine dall'improvviso scorrimento tra due blocchi della superficie terrestre lungo una superficie chiamata faglia.
 Studiare la geometria della faglia risulta fondamentale per comprendere come è avvenuto il moto relativo tra i blocchi e per descrivere al meglio il terremoto.
 Uno schema di come viene descritta una faglia è disponibile in Fig. \ref{fig:faglia}.
-Tra i parametri che descrivono la faglia è possibile identificare:
+Tra i parametri che la descrivono è possibile individuare:
 \begin{itemize}
-    \item \( \hat{n} \): vettore normale al piano di faglia che separa il blocco inferiore (in inglese \textit{foot wall block}) dal blocco superiore (\textit{upper hanging wall block}, non mostrato in figura).
-    \item Slip (\(\vec{d}\)): vettore che descrive il moto relativo del blocco superiore rispetto a quello inferiore.
-    \item Traccia della faglia: retta che si ottiene intersecando il piano di faglia con la superficie terrestre (in Fig\ref{fig:faglia} coincide con la direzione \(x_1\)).
-    \item Strike (\(\Phi_f\)): angolo misurato sulla superficie terrestre tra il nord geografico e la traccia della faglia (\( 0^{\circ} \le \Phi_f \le 360^{\circ} \)).
-    \item Dip (\(\delta\)):  angolo tra la superficie terrestre e il piano di faglia (\( 0^{\circ} \le \delta \le 90^{\circ} \)).
+    \item \( \hat{n} \): vettore normale al piano di faglia che separa il blocco inferiore (in inglese \textit{foot wall block}) dal blocco superiore (\textit{upper hanging wall block}, non mostrato in figura);
+    \item Slip (\(\vec{d}\)): vettore che descrive il moto relativo del blocco superiore rispetto a quello inferiore;
+    \item Traccia della faglia: retta che si ottiene intersecando il piano di faglia con la superficie terrestre (in Fig. \ref{fig:faglia} coincide con la direzione \(x_1\));
+    \item Strike (\(\Phi_f\)): angolo misurato sulla superficie terrestre tra il nord geografico e la traccia della faglia (\( 0^{\circ} \le \Phi_f \le 360^{\circ} \));
+    \item Dip (\(\delta\)):  angolo tra la superficie terrestre e il piano di faglia (\( 0^{\circ} \le \delta \le 90^{\circ} \));
     \item Rake (o \textit{slip angle}, \(\lambda\)): angolo fra lo slip \( \vec{d} \) e la direzione della traccia della faglia (\( -180^{\circ} \le \lambda \le 180^{\circ} \)).
 \end{itemize}
 
@@ -30,9 +30,9 @@ Tra i parametri che descrivono la faglia è possibile identificare:
 A seconda di come avviene lo scorrimento tra i due blocchi lungo il piano di faglia possiamo classificare diversi tipi di faglie, raffigurati in Fig. \ref{fig:tipi_faglia}, descritti in base a specifici valori del rake \(\lambda\):
 
 \begin{itemize}
-    \item faglia trascorrente (\textit{strike-slip fault}): si realizza quando i due blocchi scorrono orizzontalmente l'uno rispetto all'altro. Se \( \lambda=0^{\circ} \) il movimento si dice \textit{left lateral}, se \( \lambda=180^{\circ} \) si dice \textit{right lateral}.
-    \item faglia normale (\textit{normal fault}): quando si ha lo scivolamento del blocco superiore rispetto a quello inferiore, se \( \lambda=270^{\circ} \). 
-    \item faglia inversa o di sovrascorrimento (\textit{reverse/thrust fault}): quando si ha la risalita del blocco superiore rispetto a quello inferiore, se \( \lambda=90^{\circ} \).
+    \item Faglia Trascorrente (\textit{strike-slip fault}): si realizza quando i due blocchi scorrono orizzontalmente l'uno rispetto all'altro. Se \( \lambda=0^{\circ} \) il movimento si dice \textit{left lateral}, se \( \lambda=180^{\circ} \) si dice \textit{right lateral};
+    \item Faglia Normale (\textit{normal fault}): quando si ha lo scivolamento del blocco superiore rispetto a quello inferiore, se \( \lambda=-90^{\circ} \);
+    \item Faglia Inversa o di Sovrascorrimento (\textit{reverse/thrust fault}): quando si ha la risalita del blocco superiore rispetto a quello inferiore, se \( \lambda=90^{\circ} \).
 \end{itemize}
 
 Le faglie normali e inverse sono dette anche \textit{faglie dip-slip}, in quanto il movimento relativo tra i due blocchi avviene nella direzione del dip della faglia.
@@ -40,13 +40,14 @@ Le faglie normali e inverse sono dette anche \textit{faglie dip-slip}, in quanto
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\linewidth]{graphics/tipi_faglia.png}
-    \caption{Diverse tipologie di faglia. In alto le due possibili configurazioni di una faglia trascorrente. In basso a sinistra una faglia normale (dove \(\lambda=-90^{\circ}\) corrisponde a \(\lambda=270^{\circ}\) ). In basso a destra una faglia inversa (preso da \citet{introduction_to_seismology}).}
+    \caption{Diverse tipologie di faglia. In alto le due possibili configurazioni di una faglia trascorrente. In basso a sinistra una faglia normale. In basso a destra una faglia inversa (preso da \citet{introduction_to_seismology}).}
     \label{fig:tipi_faglia}
 \end{figure}
 
 
 \section{Cenni di tettonica delle placche}
-La struttura interna del pianeta Terra può essere suddivisa, in due modi differenti, in vari strati concentrici \citep{psu_earth_structure}. In base alla composizione degli strati si possono individuare crosta (oceanica e continentale), mantello (superiore e inferiore) e nucleo, che si distinguono per i differenti materiali di cui sono formati. L'altra distinzione possibile e più adatta a interpretare la teoria tettonica delle placche è una suddivisione basata sul comportamento meccanico dei vari strati. In questo caso il primo è la litosfera, lo strato più rigido, che comprende la crosta e la parte superiore del mantello. Lo spessore della litosfera può variare dai \qty{70}{\kilo\meter} ai \qty{150}{\kilo\meter}, più sottile sotto gli oceani e più spessa sotto i continenti, soprattutto in prossimità di aree montuose, dove può arrivare a \qty{200}{\kilo\meter} \citep{plate_tectonics_book}.
+
+La struttura interna del pianeta Terra può essere suddivisa, in due modi differenti, in vari strati concentrici \citep{psu_earth_structure}. In base alla composizione degli strati si possono individuare crosta (oceanica e continentale), mantello (superiore e inferiore) e nucleo, che si distinguono per i differenti materiali di cui sono formati. L'altra distinzione possibile e più adatta a interpretare la teoria tettonica delle placche, si basa sul comportamento meccanico dei vari strati. In questo caso il primo è la litosfera, lo strato più rigido, che comprende la crosta e la parte superiore del mantello. Lo spessore della litosfera può variare dai \qty{70}{\kilo\meter} ai \qty{150}{\kilo\meter}, più sottile sotto gli oceani e più spessa sotto i continenti, soprattutto in prossimità di aree montuose, dove può arrivare a \qty{200}{\kilo\meter} \citep{plate_tectonics_book}.
 Di seguito si trova l'astenosfera, che si estende tra i \qty{100}{\kilo\meter} e i \qty{350}{\kilo\meter} \citep{psu_earth_structure}, costituita dal mantello superiore sottostante alla litosfera. Nonostante sia composta da materiali allo stato solido, a grandi scale temporali si comporta in modo duttile o plastico, cioè può fluire lentamente come un fluido di elevata viscosità.
 Di seguito si trova la mesosfera, costituita dal mantello inferiore, che si estende fino a \qty{2900}{\kilo\meter} di profondità. Gli ultimi due strati sono costituiti dal nucleo esterno, allo stato liquido, e dal nucleo interno, allo stato solido.
 
@@ -62,8 +63,8 @@ La tettonica delle placche si fonda proprio sulla distinzione tra litosfera e as
 I confini delle placche vengono chiamati margini e se ne distinguono tre tipi differenti (rappresentati in Fig. \ref{fig:tipi_margini}):
 
 \begin{itemize}
-    \item Margini Divergenti: quando due placche si allontano l'una dall'altra. L'apertura che si forma viene subito riempita da nuovo materiale crostale. producendo quindi nuova crosta terrestre. Per questo vengono detti anche costruttivi.
-    \item Margini Convergenti: le due placche confinati si muovono una verso l'altra. Una delle due (di solito la più densa) scivola sotto l'altra in un processo di subduzione. Sono detti distruttivi in quanto la crosta che subduce entra a far parte del mantello e viene, quindi, distrutta.
+    \item Margini Divergenti: quando due placche si allontano l'una dall'altra. L'apertura che si forma viene subito riempita da nuovo materiale crostale, producendo quindi nuova crosta terrestre. Per questo vengono detti anche costruttivi;
+    \item Margini Convergenti: le due placche confinati si muovono una verso l'altra. Una delle due (di solito la più densa) scivola sotto l'altra in un processo di subduzione. Sono detti distruttivi in quanto la crosta che subduce entra a far parte del mantello e viene, quindi, distrutta;
     \item Margini Conservativi: quando due placche scorrono l'una sull'altra senza creazione o distruzione di crosta. Sono caratterizzati da faglie trasformi e vengono detti anche margini trasformi.
 \end{itemize}
 
@@ -73,3 +74,23 @@ I confini delle placche vengono chiamati margini e se ne distinguono tre tipi di
     \caption{Diverse tipologie di margine, costruttivo in alto, distruttivo al centro e conservativo in basso (preso da \citet{plate_tectonics_book}).}
     \label{fig:tipi_margini}
 \end{figure}
+
+\subsection{Tettonica delle placche e produzione di magmas}
+
+La teoria della tettonica a placche riesce a spiegare i meccanismi principali della produzione di magma e quindi l'attività vulcanica che ne consegue.
+La formazione del magma avviene principalmente attraverso due processi:
+
+\begin{enumerate}
+    \item Decompressione di materiale solido e caldo proveniente dal mantello;
+    \item Aggiunta di componenti volatili al mantello, in particolare H\(_2\)O, per abbassare la temperatura di fusione delle rocce del mantello.
+\end{enumerate}
+La fusione per decompressione del mantello si verifica sia in corrispondenza dei pennacchi del mantello o zampilli (mantle plumes) sia lungo i margini divergenti.
+I pennacchi sono colonne ascendenti di materiale roccioso proveniente dalla parte bassa del mantello. Risalendo, tipicamente a basse profondità (\(<\)\qty{200}{\kilo\meter}) \citep{encyclopedia}, incontrano le giuste condizioni di pressione e temperatura che portano alla fusione del materiale solido e alla formazione di magma.
+Per quanto riguarda i margini divergenti, il mantello, compiendo dei moti convettivi, risale lentamente (pochi centimetri all'anno) fino a \(\sim\) \qty{60}{\kilo\meter} dalla superficie. A causa di una progressiva diminuzione della pressione il mantello inizia a fondere, producendo così nuovo materiale magmatico \citep{earle_plate_tectonics_2021}.
+Poiché si tratta di margini divergenti, il magma prodotto va a riempire lo spazio creato dalla rimozione laterale della litosfera, contribuendo alla formazione di nuova crosta oceanica.
+La produzione di magma avviene quindi in modo simile per i pennacchi e i margini divergenti. In entrambi i casi si ha una risalita del materiale proveniente dal mantello, che fonde a causa delle variazione di pressione e temperatura che incontra durante la risalita.
+Ci sono però delle differenze tra questi due tipi di formazione di magma.
+La composizione del magma prodotto, infatti, è differente a seconda della composizione del mantello da cui questo si forma. Per i pennacchi la risalita avviene dalle profondità del mantello inferiore, mentre per i margini divergenti dal mantello superiore.
+
+L'altro processo di produzione del magma si basa sulla riduzione della temperatura di fusione del mantello dovuta all'aggiunta di componenti volatili, quali H\(_2\)O. Ciò si verifica principalmente lungo i margini convergenti. In particolare, la formazione del magma avviene a seguito della subduzione della litosfera oceanica nel mantello. Sebbene la litosfera oceanica risulti più fredda del mantello, questo riesce comunque a fondere. Il motivo principale per cui ciò avviene è la presenza di acqua nella litosfera oceanica.
+Questa, infatti, presenta sulla superficie superiore uno strato di sedimenti saturi di acqua e uno strato di crosta oceanica idratato a causa dei processi di alterazione idrotermale del fondale marino. Come conseguenza della subduzione, con l'aumento di pressione e temperatura, vengono liberati i fluidi della litosfera nel cuneo di mantello sovrastante, abbassandone la temperatura di fusione. Avviene quindi un processo di fusione che produce un magma ricco di acqua, predisposto a generare eruzione esplosive \citep{encyclopedia}.
