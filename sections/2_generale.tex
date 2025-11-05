@@ -14,10 +14,34 @@ L'arco delle Curili-Kamchatka è infatti una delle aree più sismicamente attive
 %ma cosa significano questi 600 km di cui parlo qua sotto se prima parlo di 60 km e poi a cosa serve parlare di angolo di subduzione e soprattutto profondità dei terremoti, vanno bene come informazioni generiche?
 La morfologia della placca del Pacifico cambia a \(53.5-54.5 ^\circ \text{N}\), quando questa incontra il monte sottomarino Meiji (Meiji Seamount), cambiando il carattere della subduzione. L'angolo di subduzione decresce da sud a nord da \(55 ^\circ\) a \(35 ^\circ\) e la massima profondità della sismicità si riduce da \(\sim\) \qty{600}{\kilo\meter} a \(\sim\) \qty{200}{\kilo\meter}, provocando una deviazione verso nord-ovest del fronte vulcanico \citep{description, usgs2025qw60}.
 
+
+\section{Terremoto M8.8 del 29/07/2025}
+Il 29 luglio 2025 (30 luglio alle 11:24 ora locale) si è verificato un terremoto \(M_w = 8.8\), tra i 10 più potenti mai registrati, prodotto dalla stessa zona di subduzione che generò nel 1952 un terremoto \(M_w = 9.0\).
+Terremoti di questa magnitudo si verificano in prossimità di zone di subduzione e sono generati da una faglia detta di \textit{mega sovrascorrimento} (\textit{megathrust}). Questa separa due placche convergenti, quella del Pacifico che subduce a quella nordamericana \citep{hubbardstrikeskamchatka}.
+
+Terremoti di questa portata sono eventi piuttosto rari. In un loro articolo, \citet{hubbardfirstlook} prendono in considerazione i diciassette terremoti di magnitudo \(M_w \ge 8.5\) avvenuti dal 1900 ad oggi. La loro analisi prosegue cercando una dipendenza tra questi eventi e i \textit{foreshock}, terremoti di minore entità che ne precedono uno maggiore, in particolare ricercando la correlazione tra foreshock di magnitudo \(M_w \ge 7\) e gli eventi di magnitudo  \(M_w \ge 8.5\).
+Ne risulta però che la correlazione è di \(\sim1 \%\), mostrando che questi eventi sono difficili da prevedere attraverso l'analisi dei foreshock. 
+
+Terremoti di questo tipo, proprio per la loro sporadicità, sono un importante oggetto di ricerca. L'ente statunitense United States Geological Survey (USGS) si è occupato da subito dello studio del terremoto, calcolando gli spostamenti prodotti e il momento sismico tramite un modello \textit{finite fault} (a faglia finita) \citep{usgs2025qw60finitefault}.
+Modelli di questo tipo utilizzano dati riguardanti il movimento del suolo causato dal terremoto (come lo studio di onde sismiche rilevate da stazioni sismografiche e di spostamenti della superficie terrestre) riuscendo  a rappresentare la dimensione della faglia e l'intensità dello slip lungo di essa \citep{usgs_finite_fault}.
+Nell'analisi del terremoto in questione il USGS ha analizzato onde sismiche raccolte da stazioni sismografiche situate in tutto il mondo e ha aggiornato il modello nelle settimane seguenti. Il primo miglioramento del modello è stato realizzato andando ad implementare dati provenienti da radar satellitari, raccolti utilizzando il metodo inSAR (Interferometric Synthetic Aperture Radar) \citep{hubbard2025kamchatkaupdates}. Questo metodo consiste nell'utilizzo di onde radio o microonde a una specifica lunghezza d'onda inviate da un satellite sulla superficie terrestre. Diversi punti della superficie riflettono le onde con una fase diversa, che può essere ricavata misurando l'ampiezza dell'onda e può essere rappresentata tramite una mappa di fase. Poiché un terremoto è un evento in grado di andare a modificare la superficie terrestre, è possibile realizzare un interferogramma tramite due immagini ottenute dal satellite, una prima e una dopo l'evento sismico, per studiare così gli spostamenti avvenuti \citep{hubbard2023inSAR}.
+
+Un'ulteriore miglioramento nel modello è stato fatto andando a considerare che la geometria della faglia è quella di una superficie curva e non piana. Per questo motivo il piano della faglia è stato suddiviso in tre segmenti con diverso dip (angolo di immersione). Questo è più piccolo lungo la faglia e cresce in direzione nord-ovest \citep{hubbard2025aftershockupdate}.
+% posso mettere qui la coa delle sub-faglie e dei tasselli
+Nello specifico, in Fig. \ref{fig:basemap} viene mostrata una proiezione della distribuzione superficiale dello slip. Il valore massimo raggiunto dallo slip è di \( \sim\)\qty{40}{\meter}. In generale risulta abbastanza contenuto tra la costa e la faglia, senza raggiungere la penisola.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{graphics/basemap.png}
+    \caption{Proiezione superficiale dello slip per il terremoto del 29 luglio 2025 in Kamchatka. La scala di colore dal bianco al blu indica l'intensità dello slip. La linea bianca indica il confine tra due placche [preso da \citep{usgs2025qw60finitefault}].}
+    \label{fig:basemap}
+\end{figure}
+
+
 \section{Attività vulcanica in Kamchatka}
-I vulcani sulla superficie terrestre non sono distribuiti casualmente. La maggior parte di questi si trova ai margini dei continenti, lungo catene di isole, o sotto il livello del mare dove formano lunghe catene montuose. In particolare, più della metà dei vulcani attivi si trova nell'oceano Pacifico \citep{usgs_volcanoes_plate_tectonics_1997} e forma quella che viene chiamata ''Cintura di Fuoco'', che circonda il Pacifico passando proprio per la Kamchatka.
-Si nota infatti, una certa correlazione tra i confini delle placche tettoniche e la formazione di catene vulcaniche, come mostrato in Fig. \ref{fig:fire_ring} \citep{encyclopedia}.
-La penisola della Kamchatka è proprio tra le regioni con la più alta attività vulcanica del pianeta; attiva da più di \qty{70}{Ma} a causa della subduzione della placca oceanica del Pacifico sotto la placca continentale Nordamericana \citep{volcan_kam}.
+I vulcani sulla superficie terrestre non sono distribuiti casualmente. La maggior parte di questi si trova ai margini dei continenti, lungo catene di isole, o sotto il livello del mare dove formano lunghe catene montuose. In particolare, più della metà dei vulcani attivi si trova nell'oceano Pacifico \citep{usgs_volcanoes_plate_tectonics_1997} e forma quella che viene chiamata ``Cintura di Fuoco", che circonda il Pacifico passando proprio per la Kamchatka.
+Si nota, infatti, una certa correlazione tra i confini delle placche tettoniche e la formazione di catene vulcaniche, come mostrato in Fig. \ref{fig:fire_ring} \citep{encyclopedia}.
+La penisola della Kamchatka è tra le regioni con la più alta attività vulcanica del pianeta; attiva da più di \qty{70}{Ma} a causa della subduzione della placca oceanica del Pacifico sotto la placca continentale Nordamericana \citep{volcan_kam}.
 
 \begin{figure}[H]
     \centering
@@ -32,37 +56,14 @@ Nello specifico la penisola della Kamchatka è costituita da tre fronti vulcanic
 
 ... TODO
 
-\newpage
-
-\section{Terremoto M8.8 del 29/07/2025}
-Il 29 luglio 2025 (30 luglio alle 11:24 ora locale) si è verificato un terremoto \(M_w = 8.8\), tra i 10 più potenti mai registrati, prodotto dalla stessa zona di subduzione che generò nel 1952 un terremoto \(M_w = 9.0\).
-Terremoti di questa magnitudo si verificano in prossimità di zone di subduzione e sono generati da una faglia detta di \textit{mega sovrascorrimento} (\textit{megathrust}). Questa separa due placche convergenti, quella del Pacifico che subduce a quella nordamericana \citep{hubbardstrikeskamchatka}.
-
-Terremoti di questa portata sono eventi piuttosto rari. In un loro articolo, \citet{hubbardfirstlook} prendono in considerazione i diciassette terremoti di magnitudo \(M_w \ge 8.5\) avvenuti dal 1900 ad oggi. La loro analisi prosegue cercando una dipendenza tra questi eventi e i \textit{foreshock}, terremoti di minore entità che ne precedono uno maggiore, in particolare ricercando la correlazione tra foreshock di magnitudo \(M_w \ge 7\) e gli eventi di magnitudo  \(M_w \ge 8.5\).
-Ne risulta però che la correlazione è di \(\sim1 \%\), mostrando che questi eventi sono difficili da prevedere attraverso l'analisi dei foreshock. 
-
-Terremoti di questo tipo, proprio per la loro sporadicità, sono un importante oggetto di ricerca. L'ente statunitense United States Geological Survey (USGS) si è occupato da subito dello studio del terremoto, calcolando gli spostamenti prodotti e il momento sismico tramite un modello \textit{finite fault} (a faglia finita) \citep{usgs2025qw60finitefault}.
-Modelli di questo tipo utilizzano dati riguardanti il movimento del suolo causato dal terremoto (come lo studio di onde sismiche rilevate da stazioni sismografiche e di spostamenti della superficie terrestre) riuscendo  a rappresentare la dimensione della faglia e l'intensità dello slip (spostamento della faccia superiore rispetto alla faccia inferiore del piano di faglia) lungo di essa \citep{usgs_finite_fault}.
-Nell'analisi del terremoto in questione il USGS ha analizzato onde sismiche raccolte da stazioni sismografiche situate in tutto il mondo e ha aggiornato il modello nelle settimane seguenti. Il primo miglioramento del modello è stato realizzato andando ad implementare dati provenienti da radar satellitari, raccolti utilizzando il metodo inSAR (Interferometric Synthetic Aperture Radar) \citep{hubbard2025kamchatkaupdates}. Questo metodo consiste nell'utilizzo di onde radio o microonde a una specifica lunghezza d'onda inviate da un satellite sulla superficie terrestre. Diversi punti della superficie riflettono le onde con una fase diversa, che può essere ricavata misurando l'ampiezza dell'onda e può essere rappresentata tramite una mappa di fase. Poiché un terremoto è un evento in grado di andare a modificare la superficie terrestre, è possibile confrontare due immagini ottenute dal satellite, una prima e uno dopo l'evento sismico, ottenendo informazioni sugli spostamenti avvenuti \citep{hubbard2023inSAR}.
-
-
-Un'ulteriore miglioramento nel modello è stato fatto andando a considerare che la geometria della faglia è quella di una superficie curva e non piana. Per questo motivo il piano della faglia è stato suddiviso in tre segmenti con diverso dip (angolo di immersione). Questo è più piccolo lungo la faglia e cresce in direzione nord-ovest, come mostrato in Fig. \ref{fig:basemap} \citep{hubbard2025aftershockupdate}.
-Nello specifico questa figura mostra una proiezione della distribuzione superficiale dello slip. Il valore massimo raggiunto dallo slip è di \( \sim\)\qty{40}{\meter}. In generale risulta abbastanza contenuto tra la costa e la faglia, senza raggiungere la penisola.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\linewidth]{graphics/basemap.png}
-    \caption{Proiezione superficiale dello slip per il terremoto del 29 luglio 2025 in Kamchatka. La scala di colore dal bianco al blu indica l'intensità dello slip. La linea bianca indica il confine tra due placche [preso da \citep{usgs2025qw60finitefault}].}
-    \label{fig:basemap}
-\end{figure}
-
-
-
-
-
-\section{Vulcani}
 
 \subsection{Krasheninnikov}
 
 \subsection{Klyuchevskoy}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\linewidth]{graphics/mantle_sources_fig14.png}
+    \caption{[preso da \citet{mantle_and_crust_sources_Klyuchevskoy}]}
+    \label{fig:mantle_sources_fig14}
+\end{figure}
