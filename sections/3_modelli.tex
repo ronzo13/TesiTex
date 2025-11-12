@@ -1,16 +1,11 @@
 \chapter{Modelli}
 
-% \section{Spiegazione di cosa vado a dire in questo capitolo}
-% L'obiettivo di questa tesi è studiare come un terremoto di grande magnitudo possa modificare il campo di sforzo influenzando l'attività vulcanica circostante. Si è utilizzato un modello \textit{Okada style} per calcolare gli spostamenti a partire dai dati forniti da USGS, per confrontarli poi con gli spostamenti calcolati da USGS stesso.
-% % mettere qualche referenza su questi dati?
-% Una volta verificato che i due risultati fossero congruenti è stato calcolato lo stress prodotto dal terremoto, sempre con un modello Okada style. Questi calcoli sono stati svolti in matlab, utilizzando il codice scritto da Mehdi Nikkhoo.
+L'obiettivo di questa tesi è studiare come un terremoto di grande magnitudo possa modificare il campo di sforzo influenzando l'attività vulcanica circostante. Nella prima parte di questo capitolo, quindi, vengono discussi i metodi con cui il campo di sforzo prodotto dal terremoto è stato effettivamente calcolato. In particolare, si fa riferimento ai lavori di Yoshimitsu Okada, in cui quest'ultimo raccoglie e ricava una serie di espressioni analitiche atte a descrivere spostamenti e deformazioni superficiali \citep{okada1985surface} e interni \citep{okada1992internal}, generati da fratture tensili o di taglio in un mezzo elastico semi-infinito. Nel caso specifico del terremoto in esame consideriamo come sorgente del terremoto una dislocazione rettangolare (RD, dall'inglese rectangular dislocation) finita. Nella seconda parte invece si analizzano i dicchi magmatici, con enfasi sulla loro formazione e la loro evoluzione. 
 
-\section{Modello dislocazioni Okada style}
+\section{Modello elastico di Okada per dislocazioni rettangolari}
 
-Il modello con cui sono stati replicati gli effetti del terremoto (calcolando spostamenti e stress), è un modello \textit{Okada style}, così chiamato dai lavori di \citet{okada1985surface, okada1992internal}, in cui vengono ricavate e analizzate soluzioni analitiche basate sulle dislocazioni, sia puntiformi che rettangolari, per descrivere deformazioni superficiali e interne in un ambiente \textit{half space} (ovvero con superficie libera).
-Nel caso specifico del terremoto in esame consideriamo come sorgente del terremoto una dislocazione rettangolare (RD, dall'inglese rectangular dislocation) finita.
-% Si può definire una dislocazione come una superficie lungo la quale si verifica una discontinuità \citep{segall2010}
+Una dislocazione può essere vista come una superficie all'interno di un mezzo elastico, in cui è presente una discontinuità nello spostamento. Nello studio di questi modelli, il mezzo in questione si assume omogeneo e isotropo e viene considerato o come un mezzo elastico infinito (\textit{full-space}) o come un mezzo elastico semi-infinito (\textit{half-space}). Nel caso infinito si assume che il mezzo si estenda indefinitamente in tutte le direzioni. Un modello di questo tipo può essere applicato nel caso in cui si stiano studiando processi che avvengono a profondità tali per cui si può trascurare la superficie della Terra e trattare il mezzo, appunto, come infinito. Nel caso semi-infinito, al contrario, si considera metà dello spazio costituito dal mezzo elastico in questione e l'altra metà priva di alcun mezzo. Risulta utile quando si vuole considerare la presenza della superficie nel modello. Sebbene esistano trattazioni per entrambi i modelli ci si concentra qui sullo studio del caso half-space, che risulta adatto al problema in esame. Inoltre, esistono due tipi di sorgenti che possono produrre una dislocazione: sorgenti puntiformi e sorgenti rettangolari finite. 
 
 
-
+\subsection{Correzione di Mehdi}
 \section{Modello risalita magma}
