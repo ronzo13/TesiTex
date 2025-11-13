@@ -4,7 +4,25 @@ L'obiettivo di questa tesi è studiare come un terremoto di grande magnitudo pos
 
 \section{Modello elastico di Okada per dislocazioni rettangolari}
 
-Una dislocazione può essere vista come una superficie all'interno di un mezzo elastico, in cui è presente una discontinuità nello spostamento. Nello studio di questi modelli, il mezzo in questione si assume omogeneo e isotropo e viene considerato o come un mezzo elastico infinito (\textit{full-space}) o come un mezzo elastico semi-infinito (\textit{half-space}). Nel caso infinito si assume che il mezzo si estenda indefinitamente in tutte le direzioni. Un modello di questo tipo può essere applicato nel caso in cui si stiano studiando processi che avvengono a profondità tali per cui si può trascurare la superficie della Terra e trattare il mezzo, appunto, come infinito. Nel caso semi-infinito, al contrario, si considera metà dello spazio costituito dal mezzo elastico in questione e l'altra metà priva di alcun mezzo. Risulta utile quando si vuole considerare la presenza della superficie nel modello. Sebbene esistano trattazioni per entrambi i modelli ci si concentra qui sullo studio del caso half-space, che risulta adatto al problema in esame. Inoltre, esistono due tipi di sorgenti che possono produrre una dislocazione: sorgenti puntiformi e sorgenti rettangolari finite. 
+Una dislocazione può essere vista come una superficie all'interno di un mezzo elastico, in cui è presente una discontinuità nello spostamento. Nello studio di questi modelli, il mezzo in questione si assume omogeneo e isotropo e viene considerato o come un mezzo elastico infinito (\textit{full-space}) o come un mezzo elastico semi-infinito (\textit{half-space}). Nel caso infinito si assume che il mezzo si estenda indefinitamente in tutte le direzioni. Un modello di questo tipo può essere applicato nel caso in cui si stiano studiando processi che avvengono a profondità tali per cui si può trascurare la superficie della Terra e trattare il mezzo, appunto, come infinito. Nel caso semi-infinito, al contrario, si considera metà dello spazio costituito dal mezzo elastico in questione e l'altra metà priva di alcun mezzo. Risulta utile quando si vuole considerare la presenza della superficie nel modello. Sebbene esistano trattazioni per entrambi i modelli ci si concentra qui sullo studio del caso half-space, che risulta adatto a descrivere il problema in esame.
+
+Gli spostamenti prodotti da una dislocazione possono essere modellati da due tipi di sorgenti: sorgenti puntiformi e sorgenti rettangolari finite. Considerare gli spostamenti prodotti da una sorgente puntiforme può essere utile nel caso in cui si vada a considerare gli effetti che questa ha prodotto lontano da essa. Se si è sufficientemente lontani infatti si può trascurare la forma della dislocazione e considerare soltanto gli effetti che questa ha prodotto a tali distanze.
+Gli spostamenti prodotti da una qualsiasi dislocazione si ottengono dalla formula di Volterra. Questa formula, che può essere riscritta in diverse forme, all'evenienza più o meno utili, fornisce proprio gli spostamenti dati dallo slip su un generico piano in un mezzo elastico.
+L'equazione di Volterra per un mezzo isotropo risulta essere (per la derivazione si fa riferimento a \citet{segall2010})
+
+\begin{equation}
+    \label{eq:volterra}
+    u_k(\mathbf{x}) = \int_{\Sigma} s_i(\bm{\xi}) \left[ \mu \left( \frac{\partial g_k^i}{\partial \xi_j} + \frac{\partial g_k^j}{\partial \xi_i} \right) + \lambda\delta_{ij} \frac{\partial g_k^m}{\partial \xi_m} \right] n_j \text{d} \Sigma(\bm{\xi}).
+\end{equation}
+
+Il vettore di spostamento prodotto dalla dislocazione, valutato in \(\mathbf{x}\), è proprio \(u_k(\mathbf{x})\). Il vettore \(s_i\) indica discontinuità dello spostamento tra le due facce del piano di dislocazione ed è definito come \(s_i = u_i^{+(F)}-u_i^{-(F)}\), ove F indica la faccia in esame; calcolato in \(\bm{\xi}\), vettore che indica un punto sulla superficie di dislocazione. Questa viene indicata con \(\Sigma\) e rappresenta il dominio di integrazione. I parametri \(\mu\) e \(\lambda\) indicano le costanti di Lame, \(\delta_{ij}\) è il delta di Kronecker e \(n_j\) il vettore normale a sigma. Il tensore \(g_k^i = g_k^i(\mathbf{x}, \bm{\xi})\) è noto come tensore di Green e rappresenta lo spostamento nel punto \(\mathbf{x}\) in direzione k prodotto da una forza agente nel punto \(\bm{\xi}\) diretta lungo i.
+
+atto dell'equazione di Volterra \eqref{eq:volterra} si possono determinare gli spostamenti in un half-space. Il primo passo è ricavare le funzioni di Green per un half-space, qui omesse ma disponibili nel testo di \citet{segall2010}. 
+
+
+
+
+
 
 
 \subsection{Correzione di Mehdi}
