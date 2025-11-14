@@ -21,7 +21,7 @@ Preso atto dell'equazione di Volterra \eqref{eq:volterra} si possono determinare
 Per una sorgente puntiforme, data la geometria della sorgente (definita in Fig. \ref{fig:okada_geometry}), la formula di Volterra \eqref{eq:volterra} si riduce alle espressioni, qui non riportate, ma presenti nel testo di \citet{segall2010}.
 
 
-\begin{figure}[H]
+\begin{figure}[t]
     \centering
     \includegraphics[width=0.6\textwidth]{graphics/okada_geometry.png}
     \caption{Definizione dei parametri geometrici per una dislocazione finita [preso da \citet{okada1985surface}]. Si noti che \citet{okada1985surface} si riferisce alle componenti dello slip con \(U_k\). La notazione qui usata fa invece riferimento a quella di \citet{segall2010} dove \(s_k\) è lo slip e \(u_k\) gli spostamenti. L e W sono lunghezza e spessore della faglia nel caso rettangolare finito, \(\delta\) è l'angolo di dip.}
@@ -34,15 +34,26 @@ Quando la geometria della dislocazione non può essere trascurata (ad esempio ne
 
 \subsection{Correzione analitiche e numeriche al modello di Okada}
 % penso che così vada bene, il mio problema però è il seguente: come faccio a spiegare i problemi nelle soluzioni di okada se non ho spiegato come okada ricava queste soluzioni? forse è esagerato e non andrebbe fatto? ha senso lasciare le cose solo con il paragrafo precedente?
-Le soluzioni per dislocazioni rettangolari raccolte da Okada (\citeyear{okada1985surface,okada1992internal}) presentano però alcune imperfezioni, come evidenziato da \citet{Nikkhoo2017CDM}. In un loro articolo, infatti, \citet{Nikkhoo2017CDM} analizzano questi problemi e propongono un modo per risolverli. In questo paragrafo si vanno a ripercorrere i problemi e le soluzioni proposte, in quanto le simulazioni numeriche di cui si discutono i risultati nel \textit{\textbf{Capitolo 4}} utilizzano proprio l'implementazione MATLAB sviluppata da Nikkhoo.
+Le soluzioni per dislocazioni rettangolari raccolte da Okada (\citeyear{okada1985surface,okada1992internal}) presentano però alcune limitazioni, come evidenziato da \citet{Nikkhoo2017CDM}. In questo paragrafo si vanno a ripercorrere i problemi e le soluzioni proposte da \citet{Nikkhoo2017CDM}, in quanto le simulazioni numeriche di cui si discutono i risultati nel \textit{\textbf{Capitolo 4}} utilizzano proprio l'implementazione MATLAB da loro sviluppata.
 
+Sono i due i problemi principali osservati da \citet{Nikkhoo2017CDM} delle soluzioni fornite da Okada (\citeyear{okada1985surface,okada1992internal}). Il primo consiste nella presenza di singolarità matematiche presenti lungo bordi e sopra e sotto i vertici della RD. Lo stesso \citet{okada1992internal} risolse il problema ma solo localmente, in piccolo intorno di dimensione fissata attorno alle singolarità.
+Questa soluzione non è soddisfacente perché risulta dipendente dalla scala del problema, ovvero dalle dimensioni della RD e dalla distribuzione dei punti di calcolo \citep{Nikkhoo2017CDM}. Per risolvere il problema, \citet{Nikkhoo2017CDM} propongono due configurazioni diverse, ma equivalenti matematicamente (Fig. \ref{fig:Nikkhoo_1}(a)).
+I risultati prodotti dalle due configurazioni sono gli stessi, ma l'uso di una o dell'altra permette di aggirare il problema delle singolarità.
 
-\begin{figure}[H]
+\begin{figure}[t]
     \centering
     \includegraphics[width=0.9\textwidth]{graphics/Nikkhoo_1.png}
     \caption{}
     \label{fig:Nikkhoo_1}
 \end{figure}
+
+ In Fig. \ref{fig:Nikkhoo_1}(a) sono rappresentate due possibili configurazioni per una RD. Le singolarità si trovano lungo le doppie linee continue. Nella prima configurazione, il punto di calcolo P si trova proprio su queste linee, mentre nella seconda risulta alla massima distanza possibile da esse.
+Dato che le due configurazioni sono matematicamente equivalente è sufficiente scegliere quella in cui il punto di calcolo non ricade nelle singolarità. 
+Si opera una divisione del piano attraverso le rette perpendicolari alla RD passanti per il centro e le bisettrici degli angoli della RD, come mostrato in Fig. \ref{fig:Nikkhoo_1}(b). Le suddivisioni ottenute (una bianca e una scura) separano i confini delle due configurazioni. Per un generico punto P è sufficiente considerare la proiezione sul piano e vedere in quale delle due divisioni ricade. Per evitare di incorrere nelle singolarità i calcoli si svolgono utilizzando l'altra configurazione.
+Se la proiezione ricade all'interno della RD la scelta è indifferente.
+Tramite questo ragionamento \citet{Nikkhoo2017CDM} sono riusciti a calcolare gli spostamenti e il campo di sforzo in un half-space, sia in profondità che in superficie.
+
+
 
 \begin{figure}[H]
     \centering
