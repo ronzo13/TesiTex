@@ -24,7 +24,7 @@ Per una sorgente puntiforme, data la geometria della sorgente (definita in Fig. 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{graphics/okada_geometry.png}
-    \caption{Definizione dei parametri geometrici per una dislocazione finita [preso da \citet{okada1985surface}]. Si noti che \citet{okada1985surface} si riferisce alle componenti dello slip con \(U_k\). La notazione qui usata fa invece riferimento a quella di \citet{segall2010} dove \(s_k\) è lo slip e \(u_k\) gli spostamenti. L e W sono le dimensioni della faglia nel caso rettangolare finito, \(\delta\) è l'angolo di dip.}
+    \caption{Definizione dei parametri geometrici per una dislocazione finita [preso da \citet{okada1985surface}]. Si noti che \citet{okada1985surface} si riferisce alle componenti dello slip con \(U_k\). La notazione qui usata fa invece riferimento a quella di \citet{segall2010} dove \(s_k\) è lo slip e \(u_k\) gli spostamenti. L e W sono lunghezza e spessore della faglia nel caso rettangolare finito, \(\delta\) è l'angolo di dip.}
     \label{fig:okada_geometry}
 \end{figure}
 
@@ -34,8 +34,22 @@ Quando la geometria della dislocazione non può essere trascurata (ad esempio ne
 
 \subsection{Correzione analitiche e numeriche al modello di Okada}
 % penso che così vada bene, il mio problema però è il seguente: come faccio a spiegare i problemi nelle soluzioni di okada se non ho spiegato come okada ricava queste soluzioni? forse è esagerato e non andrebbe fatto? ha senso lasciare le cose solo con il paragrafo precedente?
-Le soluzione raccolte da Okada (\citeyear{okada1985surface,okada1992internal}) presentano però alcune imperfezioni, come evidenziato da \citet{Nikkhoo2017CDM}. In un loro articolo, infatti, \citet{Nikkhoo2017CDM} analizzano questi problemi e propongono un modo per risolverli. In questo paragrafo si vanno a ripercorrere i problemi e le soluzioni proposte, in quanto le simulazioni numeriche di cui si discutono i risultati nel \textit{\textbf{Capitolo 4}} utilizzano proprio l'implementazione MATLAB sviluppata da Nikkhoo.
+Le soluzioni per dislocazioni rettangolari raccolte da Okada (\citeyear{okada1985surface,okada1992internal}) presentano però alcune imperfezioni, come evidenziato da \citet{Nikkhoo2017CDM}. In un loro articolo, infatti, \citet{Nikkhoo2017CDM} analizzano questi problemi e propongono un modo per risolverli. In questo paragrafo si vanno a ripercorrere i problemi e le soluzioni proposte, in quanto le simulazioni numeriche di cui si discutono i risultati nel \textit{\textbf{Capitolo 4}} utilizzano proprio l'implementazione MATLAB sviluppata da Nikkhoo.
 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{graphics/Nikkhoo_1.png}
+    \caption{}
+    \label{fig:Nikkhoo_1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{graphics/Nikkhoo_2.png}
+    \caption{}
+    \label{fig:Nikkhoo_2}
+\end{figure}
 
 
 \section{Introduzione alla fisica dei dicchi}
