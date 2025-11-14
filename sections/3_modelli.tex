@@ -2,7 +2,7 @@
 
 L'obiettivo di questa tesi è studiare come un terremoto di grande magnitudo possa modificare il campo di sforzo influenzando l'attività vulcanica circostante. Nella prima parte di questo capitolo, quindi, vengono discussi i metodi con cui il campo di sforzo prodotto dal terremoto è stato effettivamente calcolato. In particolare, si fa riferimento ai lavori di Yoshimitsu Okada, in cui quest'ultimo raccoglie e ricava una serie di espressioni analitiche atte a descrivere spostamenti e deformazioni superficiali \citep{okada1985surface} e interni \citep{okada1992internal}, generati da fratture tensili o di taglio in un mezzo elastico semi-infinito. Nel caso specifico del terremoto in esame consideriamo come sorgente del terremoto una dislocazione rettangolare (RD, dall'inglese rectangular dislocation) finita. Nella seconda parte invece si analizzano i dicchi magmatici, con enfasi sulla loro formazione e la loro evoluzione. 
 
-\section{Modello elastico di Okada per dislocazioni rettangolari}
+\section{Modello elastico di Okada per dislocazioni}
 
 Una dislocazione può essere vista come una superficie all'interno di un mezzo elastico, in cui è presente una discontinuità nello spostamento. Nello studio di questi modelli, il mezzo in questione si assume omogeneo e isotropo e viene considerato o come un mezzo elastico infinito (\textit{full-space}) o come un mezzo elastico semi-infinito (\textit{half-space}). Nel caso infinito si assume che il mezzo si estenda indefinitamente in tutte le direzioni. Un modello di questo tipo può essere applicato nel caso in cui si stiano studiando processi che avvengono a profondità tali per cui si può trascurare la superficie della Terra e trattare il mezzo, appunto, come infinito. Nel caso semi-infinito, al contrario, si considera metà dello spazio costituito dal mezzo elastico in questione e l'altra metà priva di alcun mezzo. Risulta utile quando si vuole considerare la presenza della superficie nel modello. Sebbene esistano trattazioni per entrambi i modelli ci si concentra qui sullo studio del caso half-space, che risulta adatto a descrivere il problema in esame.
 
@@ -15,15 +15,27 @@ L'equazione di Volterra per un mezzo isotropo risulta essere (per la derivazione
     u_k(\mathbf{x}) = \int_{\Sigma} s_i(\bm{\xi}) \left[ \mu \left( \frac{\partial g_k^i}{\partial \xi_j} + \frac{\partial g_k^j}{\partial \xi_i} \right) + \lambda\delta_{ij} \frac{\partial g_k^m}{\partial \xi_m} \right] n_j \text{d} \Sigma(\bm{\xi}).
 \end{equation}
 
-Il vettore di spostamento prodotto dalla dislocazione, valutato in \(\mathbf{x}\), è proprio \(u_k(\mathbf{x})\). Il vettore \(s_i\) indica discontinuità dello spostamento tra le due facce del piano di dislocazione ed è definito come \(s_i = u_i^{+(F)}-u_i^{-(F)}\), ove F indica la faccia in esame; calcolato in \(\bm{\xi}\), vettore che indica un punto sulla superficie di dislocazione. Questa viene indicata con \(\Sigma\) e rappresenta il dominio di integrazione. I parametri \(\mu\) e \(\lambda\) indicano le costanti di Lame, \(\delta_{ij}\) è il delta di Kronecker e \(n_j\) il vettore normale a sigma. Il tensore \(g_k^i = g_k^i(\mathbf{x}, \bm{\xi})\) è noto come tensore di Green e rappresenta lo spostamento nel punto \(\mathbf{x}\) in direzione k prodotto da una forza agente nel punto \(\bm{\xi}\) diretta lungo i.
+Il vettore di spostamento prodotto dalla dislocazione, valutato in \(\mathbf{x}\), è proprio \(u_k(\mathbf{x})\). Il vettore \(s_i\) indica discontinuità dello spostamento tra le due facce del piano di dislocazione ed è definito come \(s_i = u_i^{+(F)}-u_i^{-(F)}\), dove F indica la faccia in esame; calcolato in \(\bm{\xi}\), vettore che indica un punto sulla superficie di dislocazione. Questa viene indicata con \(\Sigma\) e rappresenta il dominio di integrazione. I parametri \(\mu\) e \(\lambda\) indicano le costanti di Lame, \(\delta_{ij}\) è il delta di Kronecker e \(n_j\) il vettore normale a sigma. Il tensore \(g_k^i = g_k^i(\mathbf{x}, \bm{\xi})\) è noto come tensore di Green e rappresenta lo spostamento nel punto \(\mathbf{x}\) in direzione k prodotto da una forza agente nel punto \(\bm{\xi}\) diretta lungo i.
 
-atto dell'equazione di Volterra \eqref{eq:volterra} si possono determinare gli spostamenti in un half-space. Il primo passo è ricavare le funzioni di Green per un half-space, qui omesse ma disponibili nel testo di \citet{segall2010}. 
-
-
-
+Preso atto dell'equazione di Volterra \eqref{eq:volterra} si possono determinare gli spostamenti in un half-space. Il primo passo è ricavare le funzioni di Green per un half-space, qui omesse ma disponibili nel testo di \citet{segall2010}.
+Per una sorgente puntiforme, data la geometria della sorgente (definita in Fig. \ref{fig:okada_geometry}), la formula di Volterra \eqref{eq:volterra} si riduce alle espressioni, qui non riportate, ma presenti nel testo di \citet{segall2010}.
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{graphics/okada_geometry.png}
+    \caption{Definizione dei parametri geometrici per una dislocazione finita [preso da \citet{okada1985surface}]. Si noti che \citet{okada1985surface} si riferisce alle componenti dello slip con \(U_k\). La notazione qui usata fa invece riferimento a quella di \citet{segall2010} dove \(s_k\) è lo slip e \(u_k\) gli spostamenti. L e W sono le dimensioni della faglia nel caso rettangolare finito, \(\delta\) è l'angolo di dip.}
+    \label{fig:okada_geometry}
+\end{figure}
 
 
-\subsection{Correzione di Mehdi}
-\section{Modello risalita magma}
+Quando la geometria della dislocazione non può essere trascurata (ad esempio nel caso in cui si stia studiando gli effetti prodotti da un terremoto vicino al suo epicentro) si fa riferimento a dislocazioni rettangolari finite. Per studiare gli spostamenti prodotti da tale dislocazione è necessario integrare lungo il piano di faglia (che indica la dislocazione rettangolare finita) le soluzioni ottenute considerando sorgenti puntiformi. I metodi con cui vengono svolti questi calcoli e le soluzioni sono ampiamente noti e non vengono qui riportati (ma sono disponibili ei lavori di Okada (\citeyear{okada1985surface,okada1992internal}) e nel testo di \citet{segall2010}). A partire dal calcolo degli spostamenti è possibile ricavare anche gli sforzi e le deformazioni prodotte dalla dislocazione.
+
+
+\subsection{Correzione analitiche e numeriche al modello di Okada}
+% penso che così vada bene, il mio problema però è il seguente: come faccio a spiegare i problemi nelle soluzioni di okada se non ho spiegato come okada ricava queste soluzioni? forse è esagerato e non andrebbe fatto? ha senso lasciare le cose solo con il paragrafo precedente?
+Le soluzione raccolte da Okada (\citeyear{okada1985surface,okada1992internal}) presentano però alcune imperfezioni, come evidenziato da \citet{Nikkhoo2017CDM}. In un loro articolo, infatti, \citet{Nikkhoo2017CDM} analizzano questi problemi e propongono un modo per risolverli. In questo paragrafo si vanno a ripercorrere i problemi e le soluzioni proposte, in quanto le simulazioni numeriche di cui si discutono i risultati nel \textit{\textbf{Capitolo 4}} utilizzano proprio l'implementazione MATLAB sviluppata da Nikkhoo.
+
+
+
+\section{Introduzione alla fisica dei dicchi}
