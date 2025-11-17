@@ -1,6 +1,6 @@
 \chapter{Modelli}
 
-L'obiettivo di questa tesi è studiare come un terremoto di grande magnitudo possa modificare il campo di sforzo influenzando l'attività vulcanica circostante. Nella prima parte di questo capitolo, quindi, vengono discussi i metodi con cui il campo di sforzo prodotto dal terremoto è stato effettivamente calcolato. In particolare, si fa riferimento ai lavori di Yoshimitsu Okada, in cui quest'ultimo raccoglie e ricava una serie di espressioni analitiche atte a descrivere spostamenti e deformazioni superficiali \citep{okada1985surface} e interni \citep{okada1992internal}, generati da fratture tensili o di taglio in un mezzo elastico semi-infinito. Nel caso specifico del terremoto in esame consideriamo come sorgente del terremoto una dislocazione rettangolare (RD, dall'inglese rectangular dislocation) finita. Nella seconda parte invece si analizzano i dicchi magmatici, con enfasi sulla loro formazione e la loro evoluzione. 
+L'obiettivo di questa tesi è studiare come un terremoto di grande magnitudo possa modificare il campo di sforzo influenzando l'attività vulcanica circostante. Nella prima parte di questo capitolo, quindi, vengono discussi i metodi con cui il campo di sforzo prodotto dal terremoto è stato effettivamente calcolato. In particolare, si fa riferimento ai lavori di Yoshimitsu Okada, in cui quest'ultimo raccoglie e ricava una serie di espressioni analitiche atte a descrivere spostamenti e deformazioni superficiali \citep{okada1985surface} e interni \citep{okada1992internal}, generati da fratture tensili o di taglio in un mezzo elastico semi-infinito. Nel caso specifico del terremoto in esame consideriamo come sorgente del terremoto una dislocazione rettangolare (RD, dall'inglese rectangular dislocation) finita. Nella seconda parte invece si analizzano i dicchi magmatici, con enfasi sulla loro formazione e propagazione.
 
 \section{Modello elastico di Okada per dislocazioni}
 
@@ -43,7 +43,7 @@ I risultati prodotti dalle due configurazioni sono gli stessi, ma l'uso di una o
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.9\textwidth]{graphics/Nikkhoo_1.png}
-    \caption{}
+    \caption{Soluzione proposta da \citet{Nikkhoo2017CDM} per il problema delle singolarità in dislocazioni rettangolari. In (a) viene mostrato il problema, con la possibilità, per un punto di calcolo, di ricadere su una singolarità. Le configurazioni sono però matematicamente equivalenti, basta utilizzare quella appropriata per svolgere i calcoli. In (b) viene proposta una suddivisione del piano (diviso tra chiaro e scuro). Le linee tratteggiate rosse e verdi rappresentano le dislocazioni raffigurate in (a), rispettivamente per la configurazione in alto e quella in basso. Si usa la configurazione in alto se la proiezione del punto di calcolo ricade sulla partizione scura, viceversa per quella chiara [preso da \citet{Nikkhoo2017CDM}].}
     \label{fig:Nikkhoo_1}
 \end{figure}
 
@@ -69,11 +69,11 @@ I miglioramenti apportati da \citet{Nikkhoo2017CDM} permettono quindi di calcola
 \section{Trasporto di magma attraverso i dicchi}
 
 Un dicco è una frattura idraulica che trasporta magma all'interno della litosfera. Lo studio della dinamica dei dicchi risulta fondamentale non solo per comprendere la risalita del magma lungo la litosfera, ma anche per spiegare attività di vulcanismo in superficie (molte eruzioni che coinvolgono magma basaltico) e processi di accrescimento della crosta oceanica e continentale \citep{Rubin1995,Rivalta2015}.
-La dimensione di un dicco è data da lunghezza, larghezza e spessore. Tipicamente, lo spessore risulta inferiore alle altre due dimensioni. Questo, infatti, varia dalle decine di centimetri a diversi metri, mentre la lunghezza e larghezza raggiungono dalle centinaia di metri a qualche chilometro \citep{Rivalta2015}.
+La dimensione di un dicco è data da lunghezza, larghezza e spessore. Tipicamente, lo spessore risulta inferiore alle altre due dimensioni. Questo, infatti, varia dalle decine di centimetri a diversi metri, mentre la lunghezza e larghezza raggiungono dalle centinaia di metri a qualche chilometro \citep{Rivalta2015}. Può quindi essere pensato come un sottile foglio di magna, che si propaga nella litosfera.
 Nello studio della propagazione del magma tramite una frattura, vengono distinte due tipologie \citep{Nakashima1993}. La prima riguarda la propagazione di una frattura collegata ad un reservoir di magma, dove questo alimenta il volume di magma all'interno della frattura. La seconda riguarda invece una frattura slegata da un reservoir, la cui dinamica è dovuta alla spinta di galleggiamento del fluido nella frattura, senza l'influenza di un serbatoio esterno. In questa tesi si prende in esame il secondo caso.
 
 
-\subsection{Propagazione dei dicchi}
+\subsection{Propagazione per spinta di galleggiamento}
 
 \begin{figure}[t]
     \centering
@@ -83,49 +83,38 @@ Nello studio della propagazione del magma tramite una frattura, vengono distinte
 \end{figure}
 % qui io ho citato un articolo ella foto ma la foto è presa da altri due articoli che non ho letto, dovrei citare quelli?
 
-Una frattura di dimensione finite contenente un fluido, come può essere un dicco, può risalire verso l'alto se il fluido al suo interno è meno denso della roccia circostante.
+Una frattura di dimensioni finite contenente un fluido, come può essere un dicco, può risalire verso l'alto se il fluido al suo interno è meno denso della roccia circostante.
 Con l'aumentare della profondità si ha un'aumento della spinta di galleggiamento prodotta dalla differenza di pressione tra il magma all'interno della frattura e la roccia all'esterno.
 Si ha infatti un aumento della pressione litostatica, che risulta maggiore nella parte inferiore del dicco rispetto a quella superiore (Fig. \ref{fig:dicco_evoluzione}).
 Indicando con \( \Delta\gamma = \Delta\rho g = (\rho_r-\rho_m)g\) il gradiente di pressione dovuto alla spinta di galleggiamento, \citet{Dahm2000} ha mostrato che in una frattura che si estende verticalmente per una lunghezza di \(2a\) (partendo da \(z=-a\), con z che aumenta verso 'alto), la differenza di pressione, lungo il profilo del dicco, è data da
 
 \begin{equation}
-  \label{buoyancy}
+  \label{eq:buoyancy}
   \delta p(z) = \delta p_0 + \Delta\gamma\, z , \qquad -a \le z \le a.
 \end{equation}
 
-Il primo termine in Eq. \eqref{buoyancy} rappresenta 
+Il termine \(\delta p_0 = p_{int}+\sigma_n\) in Eq. \eqref{eq:buoyancy}, rappresenta la differenza tra la pressione interna \(p_{int}\) del magma nella frattura e lo sforzo della roccia perpendicolare all'apertura del dicco. Il secondo termine \(\Delta\gamma z\) indica invece la pressione di galleggiamento, che porta il dicco, se si guarda la sua sezione verticale, ad avere una forma a goccia ribaltata, più schiacciato verso il basso con la punta verso l'alto (Fig. \ref{fig:dicco_evoluzione}).
 
-
-Secondo la teoria elastica di Weertman, una frattura di volume finito contenente un fluido meno denso della roccia circostante, si può propagare verso l'alto se il suo volume è maggiore di un certo volume critico \citep{Rivalta2015,Dahm2000,Davis2020}.
-La propagazione di un dicco dipende principalmente dalla sua possibilità di fratturare la roccia. Possiamo definire un fattore, detto fattore di intensità di sforzo \(K\), basato sulla geometria della frattura e sullo stress che questa applica sulla roccia se riempita di un fluido. Un frattura riesce a propagarsi in un mezzo se \(K > K_c\), dove \(K_c\) è la resistenza alla frattura (\textit{fracture toughness}) del mezzo stesso.  
+Tra i primi a studiare l'orientazione di fratture quali i dicchi vi è \citet{anderson1951dynamics}, che notò come questi tendano ad allinearsi perpendicolarmente alla direzione dello sforzo minimo compressivo, così da ridurre il lavoro necessario ad aprire la frattura.
+Per stabilire se una frattura riesce a propagarsi si fa riferimento alla teoria elastica di Weertman. Secondo questa, una frattura di volume finito contenente un fluido meno denso della roccia circostante, si può propagare verso l'alto se il suo volume è maggiore di un certo volume critico \citep{Rivalta2015,Dahm2000,Davis2020}.
+Poiché la propagazione di un dicco dipende principalmente dalla sua capacità di fratturare la roccia, possiamo definire un fattore, detto fattore di intensità di sforzo \(K\), basato sulla geometria della frattura e sullo stress che questa applica sulla roccia se riempita di un fluido. Una frattura riesce a propagarsi in un mezzo se \(K > K_c\), dove \(K_c\) è la resistenza alla frattura (\textit{fracture toughness}) del mezzo stesso.  
 Questa condizione viene raggiunta se nella frattura si accumula un volume \(V\) pari o superiore a un certo volume critico \(V_c\), che provoca sulla punta del dicco, uno sforzo tale da fratturare la roccia.
 Al contrario, se il volume del magma nella frattura è inferiore a quello critico il dicco sarà statico \citep{Rivalta2015}.
 
-In particolare, se \(V=V_c\), sulla punta del dicco si ha che \(K=K_c\), la frattura tende a rompere la roccia e risalire. Quando il dicco è partito, sull'estremità inferiore si ha \(K=0\), ad indicare che la frattura si è chiusa in fondo \citep{Rivalta2015}.
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{graphics/foglio_dicco.jpg}
-    \caption{}
-    \label{fig:foglio_dicco}
-\end{figure}
-
-\begin{figure}[H]
+\begin{figure}[t]
     \centering
     \includegraphics[width=0.9\textwidth]{graphics/dicco_evoluzione.png}
     \caption{}
     \label{fig:dicco_evoluzione}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{graphics/coin_dike.png}
-    \caption{}
-    \label{fig:coin_dike}
-\end{figure}
+In particolare, se \(V=V_c\), sulla punta del dicco si ha che \(K=K_c\), la frattura tende a rompere la roccia e risalire. Quando il dicco è partito, sull'estremità inferiore si ha \(K=0\), ad indicare che la frattura si è chiusa in fondo \citep{Rivalta2015}, portando il profilo del dicco ad avere una forma a goccia ribaltata.
 
+Weertman ha però sviluppato la teoria solo nel caso bidimensionale. \citet{Davis2020} la estendo anche al caso tridimensionale, ottenendo, per il volume critico, un espressione del tipo:
 
-
-
+\begin{equation}
+    \label{eq:volume_critico}
+    V_c = \frac{(1-\nu)}{16\mu} \left( \frac{9 \pi^4 K_c^8}{\cos(\theta)\Delta\gamma^5} \right)^{1/3}.
+\end{equation}
+In Eq. \eqref{eq:volume_critico}, l'angolo \(\theta\) indica l'angolo con cui la frattura è inclinata rispetto alla verticale, nel caso più generale in cui questa non fosse disposta verticalmente.
 
