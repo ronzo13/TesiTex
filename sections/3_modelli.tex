@@ -70,12 +70,11 @@ I miglioramenti apportati da \citet{Nikkhoo2017CDM} permettono quindi di calcola
 
 Un dicco è una frattura idraulica che trasporta magma all'interno della litosfera. Lo studio della dinamica dei dicchi risulta fondamentale non solo per comprendere la risalita del magma lungo la litosfera, ma anche per spiegare attività di vulcanismo in superficie (molte eruzioni che coinvolgono magma basaltico) e processi di accrescimento della crosta oceanica e continentale \citep{Rubin1995,Rivalta2015}.
 La dimensione di un dicco è data da lunghezza, larghezza e spessore. Tipicamente, lo spessore risulta inferiore alle altre due dimensioni. Questo, infatti, varia dalle decine di centimetri a diversi metri, mentre la lunghezza e larghezza raggiungono dalle centinaia di metri a qualche chilometro \citep{Rivalta2015}.
-\subsection{Propagazione dei dicchi}
-Secondo la teoria elastica di Weertman, una frattura di volume finito contenente un fluido meno denso della roccia circostante, si può propagare verso l'alto se il suo volume è maggiore di un certo volume critico \citep{Rivalta2015,Dahm2000,Davis2020}
+Nello studio della propagazione del magma tramite una frattura, vengono distinte due tipologie \citep{Nakashima1993}. La prima riguarda la propagazione di una frattura collegata ad un reservoir di magma, dove questo alimenta il volume di magma all'interno della frattura. La seconda riguarda invece una frattura slegata da un reservoir, la cui dinamica è dovuta alla spinta di galleggiamento del fluido nella frattura, senza l'influenza di un serbatoio esterno. In questa tesi si prende in esame il secondo caso.
 
-La propagazione di un dicco dipende principalmente dalla sua possibilità di fratturare la roccia. Possiamo definire un fattore, detto fattore di intensità di sforzo \(K\), basato sulla geometria della frattura e sullo stress che questa applica sulla roccia se riempita di un fluido. Un frattura riesce a propagarsi in un mezzo se \(K > K_c\), dove \(K_c\) è la resistenza alla frattura (\textit{fracture toughness}) del mezzo stesso.  
-Questa condizione viene raggiunta se nella frattura si accumula un volume \(V\) pari o superiore a un certo volume critico \(V_c\), che provoca sulla punta del dicco, uno sforzo tale da fratturare la roccia.
-Al contrario, se il volume del magma nella frattura è inferiore a quello critico il dicco sarà statico \citep{Rivalta2015}.
+
+\subsection{Propagazione dei dicchi}
+
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.85\textwidth]{graphics/foto_vera_dicchi.png}
@@ -83,14 +82,31 @@ Al contrario, se il volume del magma nella frattura è inferiore a quello critic
     \label{fig:foto_vera_dicchi}
 \end{figure}
 % qui io ho citato un articolo ella foto ma la foto è presa da altri due articoli che non ho letto, dovrei citare quelli?
+
+Una frattura di dimensione finite contenente un fluido, come può essere un dicco, può risalire verso l'alto se il fluido al suo interno è meno denso della roccia circostante.
+Con l'aumentare della profondità si ha un'aumento della spinta di galleggiamento prodotta dalla differenza di pressione tra il magma all'interno della frattura e la roccia all'esterno.
+Si ha infatti un aumento della pressione litostatica, che risulta maggiore nella parte inferiore del dicco rispetto a quella superiore (Fig. \ref{fig:dicco_evoluzione}).
+Indicando con \( \Delta\gamma = \Delta\rho g = (\rho_r-\rho_m)g\) il gradiente di pressione dovuto alla spinta di galleggiamento, \citet{Dahm2000} ha mostrato che in una frattura che si estende verticalmente per una lunghezza di \(2a\) (partendo da \(z=-a\), con z che aumenta verso 'alto), la differenza di pressione, lungo il profilo del dicco, è data da
+
+\begin{equation}
+  \label{buoyancy}
+  \delta p(z) = \delta p_0 + \Delta\gamma\, z , \qquad -a \le z \le a.
+\end{equation}
+
+Il primo termine in Eq. \eqref{bouyancy} rappresenta 
+
+
+Secondo la teoria elastica di Weertman, una frattura di volume finito contenente un fluido meno denso della roccia circostante, si può propagare verso l'alto se il suo volume è maggiore di un certo volume critico \citep{Rivalta2015,Dahm2000,Davis2020}.
+La propagazione di un dicco dipende principalmente dalla sua possibilità di fratturare la roccia. Possiamo definire un fattore, detto fattore di intensità di sforzo \(K\), basato sulla geometria della frattura e sullo stress che questa applica sulla roccia se riempita di un fluido. Un frattura riesce a propagarsi in un mezzo se \(K > K_c\), dove \(K_c\) è la resistenza alla frattura (\textit{fracture toughness}) del mezzo stesso.  
+Questa condizione viene raggiunta se nella frattura si accumula un volume \(V\) pari o superiore a un certo volume critico \(V_c\), che provoca sulla punta del dicco, uno sforzo tale da fratturare la roccia.
+Al contrario, se il volume del magma nella frattura è inferiore a quello critico il dicco sarà statico \citep{Rivalta2015}.
+
 In particolare, se \(V=V_c\), sulla punta del dicco si ha che \(K=K_c\), la frattura tende a rompere la roccia e risalire. Quando il dicco è partito, sull'estremità inferiore si ha \(K=0\), ad indicare che la frattura si è chiusa in fondo \citep{Rivalta2015}.
-
-
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.4\textwidth]{graphics/foglio_dicco.jpg}
+    \includegraphics[width=0.5\textwidth]{graphics/foglio_dicco.jpg}
     \caption{}
     \label{fig:foglio_dicco}
 \end{figure}
