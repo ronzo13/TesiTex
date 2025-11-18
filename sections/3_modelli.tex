@@ -61,7 +61,7 @@ I miglioramenti apportati da \citet{Nikkhoo2017CDM} permettono quindi di calcola
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{graphics/Nikkhoo_2.png}
-    \caption{}
+    \caption{La geometria di Okada (\citeyear{okada1985surface,okada1992internal}) della RD è rappresentata con le linee tratteggiate. \(E_0\), \(N_0\) e \(d\) sono le coordinate del centro della RD, \(L\) e \(W\) rispettivamente lunghezza e larghezza. \(\delta \) e \(alfa\) sono gli angoli di dip e strike, mentre \(\theta\) è il plunge, che aggiunge il grado di libertà rotazionale mancante al modello [preso da \citet{Nikkhoo2017CDM}].}
     \label{fig:Nikkhoo_2}
 \end{figure}
 
@@ -72,20 +72,27 @@ Un dicco è una frattura idraulica che trasporta magma all'interno della litosfe
 La dimensione di un dicco è data da lunghezza, larghezza e spessore. Tipicamente, lo spessore risulta inferiore alle altre due dimensioni. Questo, infatti, varia dalle decine di centimetri a diversi metri, mentre la lunghezza e larghezza raggiungono dalle centinaia di metri a qualche chilometro \citep{Rivalta2015}. Può quindi essere pensato come un sottile foglio di magna, che si propaga nella litosfera.
 Nello studio della propagazione del magma tramite una frattura, vengono distinte due tipologie \citep{Nakashima1993}. La prima riguarda la propagazione di una frattura collegata ad un reservoir di magma, dove questo alimenta il volume di magma all'interno della frattura. La seconda riguarda invece una frattura slegata da un reservoir, la cui dinamica è dovuta alla spinta di galleggiamento del fluido nella frattura, senza l'influenza di un serbatoio esterno. In questa tesi si prende in esame il secondo caso.
 
-
-\subsection{Propagazione per spinta di galleggiamento}
-
-\begin{figure}[t]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{graphics/foto_vera_dicchi.png}
-    \caption{}
+    \caption{Foto di due dicchi. \(L\) indica la lunghezza del dicco, \(H\) lo spessore. In rosso la larghezza dei dicchi. Risulta evidente che lo spessore risulta minore delle altre due dimensioni. L'immagine a sinistra è stata scattata da N. Villeneuve al Piton des Neiges, quella a destra da J.-C. Komorowski al Nyiragongo [preso da \citet{Rivalta2015}].}
     \label{fig:foto_vera_dicchi}
 \end{figure}
 % qui io ho citato un articolo ella foto ma la foto è presa da altri due articoli che non ho letto, dovrei citare quelli?
 
+\subsection{Propagazione per spinta di galleggiamento}
+
 Una frattura di dimensioni finite contenente un fluido, come può essere un dicco, può risalire verso l'alto se il fluido al suo interno è meno denso della roccia circostante.
 Con l'aumentare della profondità si ha un'aumento della spinta di galleggiamento prodotta dalla differenza di pressione tra il magma all'interno della frattura e la roccia all'esterno.
 Si ha infatti un aumento della pressione litostatica, che risulta maggiore nella parte inferiore del dicco rispetto a quella superiore (Fig. \ref{fig:dicco_evoluzione}).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{graphics/dicco_evoluzione.png}
+    \caption{Profilo di pressione lungo un dicco e forme risultanti della frattura. La differenza di densità tra magma e roccia genera una pressione di galleggiamento, che porta il dicco ad assumere una forma a goccia ribaltata. Quando \(K = Kc\), la frattura si propaga e per\(K = 0\) si chiude alla base.}
+    \label{fig:dicco_evoluzione}
+\end{figure}
+
 Indicando con \( \Delta\gamma = \Delta\rho g = (\rho_r-\rho_m)g\) il gradiente di pressione dovuto alla spinta di galleggiamento, \citet{Dahm2000} ha mostrato che in una frattura che si estende verticalmente per una lunghezza di \(2a\) (partendo da \(z=-a\), con z che aumenta verso 'alto), la differenza di pressione, lungo il profilo del dicco, è data da
 
 \begin{equation}
@@ -100,13 +107,6 @@ Per stabilire se una frattura riesce a propagarsi si fa riferimento alla teoria 
 Poiché la propagazione di un dicco dipende principalmente dalla sua capacità di fratturare la roccia, possiamo definire un fattore, detto fattore di intensità di sforzo \(K\), basato sulla geometria della frattura e sullo stress che questa applica sulla roccia se riempita di un fluido. Una frattura riesce a propagarsi in un mezzo se \(K > K_c\), dove \(K_c\) è la resistenza alla frattura (\textit{fracture toughness}) del mezzo stesso.  
 Questa condizione viene raggiunta se nella frattura si accumula un volume \(V\) pari o superiore a un certo volume critico \(V_c\), che provoca sulla punta del dicco, uno sforzo tale da fratturare la roccia.
 Al contrario, se il volume del magma nella frattura è inferiore a quello critico il dicco sarà statico \citep{Rivalta2015}.
-
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.9\textwidth]{graphics/dicco_evoluzione.png}
-    \caption{}
-    \label{fig:dicco_evoluzione}
-\end{figure}
 
 In particolare, se \(V=V_c\), sulla punta del dicco si ha che \(K=K_c\), la frattura tende a rompere la roccia e risalire. Quando il dicco è partito, sull'estremità inferiore si ha \(K=0\), ad indicare che la frattura si è chiusa in fondo \citep{Rivalta2015}, portando il profilo del dicco ad avere una forma a goccia ribaltata.
 
