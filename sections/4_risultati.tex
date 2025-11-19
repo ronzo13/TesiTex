@@ -1,13 +1,30 @@
 \chapter{Risultati}
 
+In questo capitolo vengono presentati i risultati delle simulazioni numeriche relative al terremoto di magnitudo \(M_w = 8.8\) del 29 luglio 2025 in Kamchatka.
+
+Per tutti i risultati presentati si utilizza un sistema di riferimento basato sulle coordinate East-North-Up (ENU), dove l'asse delle ascisse è posto lungo la direzione est, quello delle ordinate lungo il nord e l'altezza viene considerata positiva verso l'alto. L'origine del sistema di riferimento è posizionata sull'epicentro, all'altezza del livello del mare. Le coordinate dei vulcani Klyuchevskoy e Krasheninnikov in tale sistema di riferimento sono riportate in Tab. \ref{tab:coordinate_vulcani}.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|cc|ccc}
+    \toprule
+        vulcano & latitudine (\(^\circ\)) & longitudine (\(^\circ\)) & E (\qty{}{\meter}) & N (\qty{}{\meter}) & U (\qty{}{\meter}) \\
+    \midrule
+        Klyuchevskoy & \qty{56.056}{} & \qty{160.642}{} & \qty{23550}{} & \qty{395848}{} & \qty{4750}{} \\
+        Krasheninnikov & \qty{54.596}{} & \qty{160.27}{} & \qty{388}{} & \qty{233448}{} & \qty{1816}{} \\
+        
+    \bottomrule
+    \end{tabular}
+    \caption{Coordinate ENU dei vulcani Klyuchevskoy e Krasheninnikov rispetto all'epicentro del terremoto.}
+    \label{tab:coordinate_vulcani}
+\end{table}
+
+
+
+
 \section{Calcolo degli spostamenti e confronto con quelli ottenuti da USGS}
 
-Come primo approccio al problema si è deciso di calcolare gli spostamenti superficiali, per confrontarli poi con quelli calcolati da USGS.
-Gli spostamenti sono stati calcolati da \citet{usgs2025qw60finitefault} attraverso un modello Okada style e sono disponibili nella sezione \textit{Downloads} della pagina web citata. Sono stati quindi realizzati due plot, uno per gli spostamenti orizzontali (spostamenti lungo est e lungo nord) e uno per gli spostamenti verticali.
-L'epicentro del terremoto è segnato nei plot come un puntino bianco.
-Il sistema di riferimento adottato risulta centrato nell'epicentro e le coordinate adottate sono East-North-Up (ENU), ovvero l'asse x coincide con la direzione est, l'asse y con il nord e l'asse z con l'altezza.
-% qui bisogna capire come fare
-Per il calcolo degli spostamenti ci si è serviti di una funzione ... scritta da ...
+
 
 \begin{figure}[H]
     \centering
