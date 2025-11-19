@@ -2,7 +2,7 @@
 
 In questo capitolo vengono presentati i risultati delle simulazioni numeriche relative al terremoto di magnitudo \(M_w = 8.8\) del 29 luglio 2025 in Kamchatka. L'obiettivo principale è calcolare il campo di sforzo statico generato dal terremoto per verificare se l'evento abbia potuto influenzare l'attività eruttiva di Klyuchevskoy e Krasheninnikov avvenuta nei giorni successivi. Per modellizzare il terremoto si usano i parametri di inversione calcolati da \citet{usgs2025qw60finitefault} basati su un modello a faglia finita in cui la faglia è suddivisa in \qty{465}{} subfaglie di lunghezza \(L= \) \qty{20}{\kilo\meter} e larghezza \(W= \) \qty{10}{\kilo\meter}. 
 
-\paragraph{Definizione del sistema di riferimento}
+\subsubsection{Definizione del sistema di riferimento}
 Per tutti i risultati presentati si utilizza un sistema di riferimento basato sulle coordinate East-North-Up (ENU), dove l'asse delle ascisse è posto lungo la direzione est, quello delle ordinate lungo il nord e l'altezza viene considerata positiva verso l'alto. L'origine del sistema di riferimento è posizionata sull'epicentro, all'altezza del livello del mare. Le coordinate dei vulcani Klyuchevskoy e Krasheninnikov in tale sistema di riferimento sono riportate in Tab. \ref{tab:coordinate_vulcani}.
 
 \begin{table}[H]
@@ -21,7 +21,13 @@ Per tutti i risultati presentati si utilizza un sistema di riferimento basato su
 \end{table}
 
 \subsubsection{Definizione del dominio di calcolo}
+Il calcolo numerico del campo di sforzo è stato effettuato su un dominio tale da includere entrambi i vulcani e una buona parte della regione della Kamchatka attorno ad essi. Si è realizzata una griglia discreta con un passo spaziale di \(\Delta x = \Delta y = \Delta z = \) \qty{10}{\kilo\meter}, entro i seguenti limiti:
 
+\begin{itemize}
+    \item \(X\) (direzione est): da \qty{-200}{\kilo\meter} a \qty{100}{\kilo\meter};
+    \item \(Y\) (direzione nord): da \qty{150}{\kilo\meter} a \qty{650}{\kilo\meter};
+    \item \(Z\) (direzione verticale): da \qty{-100}{\kilo\meter} a \qty{0}{\kilo\meter}.
+\end{itemize}
 
 \subsubsection{Definizione dei parametri elastici}
 Parametri quali modulo di Poisson \(\nu\) e costanti di Lamé \(\lambda\) e \(\mu\) (Tab. \ref{tab:costanti}) sono stati assunti costanti, basandosi sui valori che questi tipicamente assumono per rocce della crosta terrestre.
