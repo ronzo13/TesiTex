@@ -110,6 +110,31 @@ Con un errore relativo rispetto al valore riportato del \(2.36 \% \) si può con
 
 \subsection{Implementazione di uno stress regionale}
 
+\begin{figure}[htbp]
+    \centering
+    \begin{tikzpicture}[>=Stealth, scale=3.5]
+
+        \def\ang{37} 
+
+        \draw[->, thick] (-1.2, 0) -- (1.2, 0) node[right] {$X = E$};
+        \draw[->, thick] (0, -1.2) -- (0, 1.2) node[above] {$Y = N$};
+
+        \draw[red, ->, thick] (0,0) -- ({1.2*cos(-\ang)}, {1.2*sin(-\ang)}) node[below right] {$X'$};
+        \draw[red, ->, thick] (0,0) -- ({1.2*cos(90-\ang)}, {1.2*sin(90-\ang)}) node[above right] {$Y'$};
+
+        \draw[red, dashed, thick] (0,0) -- ({-1.2*cos(90-\ang)}, {-1.2*sin(90-\ang)}) node[below left] {$-Y'$};
+
+        \draw[->, red, thick] (0, 0.4) arc (90:{90-\ang}:0.4);
+        \node[red] at ({0.5*cos(90-\ang/2)}, {0.5*sin(90-\ang/2)}) {\small $\theta$};
+
+        \draw[->, orange, thick] (0, 0.6) arc (90:{90-\ang-180}:0.6);
+        \node[orange, right, font=\small] at (0.1, -0.5) {$\Phi_f$};
+
+    \end{tikzpicture}
+    \caption{Relazione geometrica tra il sistema ENU (nero), il sistema ruotato (rosso) e l'angolo di strike $\Phi_f$ (arancione). L'asse $-Y'$ corrisponde alla direzione di scorrimento della faglia.}
+    \label{fig:assi_strike}
+\end{figure}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\linewidth]{plots/diag_reg_kly.pdf}
@@ -161,3 +186,28 @@ Con un errore relativo rispetto al valore riportato del \(2.36 \% \) si può con
 
 
 \section{Influenza sulla risalita del magma}
+
+
+\begin{table}[H]
+    \centering
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabular}{c||ccc|ccc}
+    \toprule
+    & \multicolumn{3}{c}{Scenario di Riferimento} & \multicolumn{3}{c}{Scenario Post-Sismico} \\
+    \cmidrule(lr){2-4} \cmidrule(lr){5-7}
+    Dicco & X & Y & Z & X & Y & Z \\
+    & (\qty{}{\kilo\meter}) & (\qty{}{\kilo\meter}) & (\qty{}{\kilo\meter}) & (\qty{}{\kilo\meter}) & (\qty{}{\kilo\meter}) & (\qty{}{\kilo\meter}) \\
+    \midrule
+    dike1 & -118.22 & 392.88 & 0.03 & -118.27 & 392.76 & 0.03 \\
+    dike2 & -93.48  & 425.44 & 0.03 & -93.52  & 425.35 & 0.04 \\
+    dike3 & -67.15  & 458.38 & 0.03 & -67.18  & 458.33 & 0.04 \\
+    dike4 & -43.24  & 492.10 & 0.05 & -43.26  & 492.06 & 0.05 \\
+    dike5 & -19.25  & 524.95 & 0.03 & -19.27  & 524.93 & 0.03 \\
+    dike6 &   5.78  & 558.70 & 0.01 &   5.78  & 558.68 & 0.01 \\
+    dike7 &  31.63  & 590.77 & 0.08 &  31.62  & 590.76 & 0.08 \\
+    dike8 &  56.41  & 623.62 & 0.04 &  56.40  & 623.62 & 0.04 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Confronto tra le coordinate finali di arresto dei dicchi nello scenario senza terremoto (Riferimento) e in quello con l'aggiunta dello stress co-sismico.}
+    \label{tab:confronto_arresto}
+\end{table}
