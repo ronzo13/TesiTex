@@ -1,7 +1,8 @@
 \chapter{Risultati}
 
-In questo capitolo vengono presentati i risultati delle simulazioni numeriche relative al terremoto di magnitudo \(M_w = 8.8\) del 29 luglio 2025 in Kamchatka.
+In questo capitolo vengono presentati i risultati delle simulazioni numeriche relative al terremoto di magnitudo \(M_w = 8.8\) del 29 luglio 2025 in Kamchatka. L'obiettivo principale è calcolare il campo di sforzo statico generato dal terremoto per verificare se l'evento abbia potuto influenzare l'attività eruttiva di Klyuchevskoy e Krasheninnikov avvenuta nei giorni successivi. Per modellizzare il terremoto si usano i parametri di inversione calcolati da \citet{usgs2025qw60finitefault} basati su un modello a faglia finita in cui la faglia è suddivisa in \qty{465}{} subfaglie di lunghezza \(L= \) \qty{20}{\kilo\meter} e larghezza \(W= \) \qty{10}{\kilo\meter}. 
 
+\paragraph{Definizione del sistema di riferimento}
 Per tutti i risultati presentati si utilizza un sistema di riferimento basato sulle coordinate East-North-Up (ENU), dove l'asse delle ascisse è posto lungo la direzione est, quello delle ordinate lungo il nord e l'altezza viene considerata positiva verso l'alto. L'origine del sistema di riferimento è posizionata sull'epicentro, all'altezza del livello del mare. Le coordinate dei vulcani Klyuchevskoy e Krasheninnikov in tale sistema di riferimento sono riportate in Tab. \ref{tab:coordinate_vulcani}.
 
 \begin{table}[H]
@@ -19,7 +20,34 @@ Per tutti i risultati presentati si utilizza un sistema di riferimento basato su
     \label{tab:coordinate_vulcani}
 \end{table}
 
+\subsubsection{Definizione del dominio di calcolo}
 
+
+\subsubsection{Definizione dei parametri elastici}
+Parametri quali modulo di Poisson \(\nu\) e costanti di Lamé \(\lambda\) e \(\mu\) (Tab. \ref{tab:costanti}) sono stati assunti costanti, basandosi sui valori che questi tipicamente assumono per rocce della crosta terrestre.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+    \toprule
+        parametro & simbolo & valore \\
+    \midrule
+        modulo di Poisson & \(\nu\) & 0.25 \\
+        primo parametro di Lamé & \(\lambda\) & \qty{3.3e10}{\pascal} \\
+        rigidità & \(\mu\) & \qty{3.3e10}{\pascal} \\
+    \bottomrule
+    \end{tabular}
+    \caption{Costanti elastiche utilizzate nelle simulazioni numeriche.}
+    \label{tab:costanti}
+\end{table}
+
+Tipicamente per le rocce vale \(0.2 \le \nu \le 0.3\) e si adotta l'approssimazione di Poisson per cui \(\lambda=\mu\) che implica \(\nu=0.25\). Il valore di \(\mu\) è stato scelto sulla base di quelli adottati da \citet{geodynamics_book} e \citet{introduction_to_seismology}.
+
+Inoltre, tramite la rigidità, è possibile stimare il momento sismico \(M_0\) del terremoto, una grandezza che quantifica l'energia rilasciata dal terremoto stesso. Per calcolarlo, si fa riferimento alla formula \(M_0 = \mu S \overline{d} \), dove \(S\) è l'area totale della faglia e \(\overline{d}\) lo slip medio che ha subito il piano di faglia. Calcolando la media dello slip dai dati raccolti da \citet{usgs2025qw60finitefault} si ottiene \(\overline{d} = \) \qty{7.19}{\meter}.
+Calcolando l'area totale della faglia come la somma dell'area di tutte le subfaglie e utilizzando questo valore per calcolare il momento sismico si ottiene \(M_0 = \) \qty{2.2066e22}{\newton\meter}. 
+
+Il valore calcolato da \citet{usgs2025qw60finitefault} risulta \(M_0 = \) \qty{2.26e22}{\newton\meter}.
+Con un errore relativo rispetto al valore riportato del \(2.36 \% \) si può considerare ragionevole il valore assegnato alla rigidità.
 
 
 \section{Calcolo degli spostamenti e confronto con quelli ottenuti da USGS}
@@ -28,7 +56,7 @@ Per tutti i risultati presentati si utilizza un sistema di riferimento basato su
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\linewidth]{plots/spostamenti_orizzontali.pdf}
+    \includegraphics[width=1\linewidth]{plots/spostamenti_orizzontali.pdf}
     \caption{}
     \label{fig:spostamenti_orizzontali}
 \end{figure}
@@ -36,7 +64,7 @@ Per tutti i risultati presentati si utilizza un sistema di riferimento basato su
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.95\linewidth]{plots/spostamenti_verticali.pdf}
+    \includegraphics[width=1\linewidth]{plots/spostamenti_verticali.pdf}
     \caption{}
     \label{fig:spostamenti_verticali}
 \end{figure}
