@@ -91,35 +91,51 @@ Il modello adottato può essere considerato valido, in grado di riprodurre effic
 
 \section{Calcolo del campo di sforzo}
 Lo scopo principale del lavoro è vedere come il campo di sforzo cambia a seguito dell'attività sismica e se questo cambiamento negli sforzi può portare i dicchi magmatici a modificare il loro percorso. Per prima cosa è stato calcolato il campo di sforzo prodotto dal terremoto, con lo stesso modello a faglia finita utilizzato per il calcolo degli spostamenti superficiali.
-Si è quindi calcolato un modello pre-sismico del campo di sforzo della regione, basato sulle caratteristiche tettoniche della regione e sulla topografia, 
+Si è quindi calcolato un modello pre-sismico del campo di sforzo della regione, basato sulle caratteristiche tettoniche della regione e sulla topografia. A questo si aggiunge il campo prodotto dal terremoto per ottenere il campo totale post-sismico.
+
+Gli sforzi sono stati calcolati su una griglia tridimensionale discreta, il cui dominio è stato indicato all'inizio di questo capitolo.
+Lo scopo delle figure realizzate in questa sezione è di mostrare il campo di sforzo su una sezione dell'asse \(Y=N\), con particolare interesse sulle direzioni dell'asse di sforzo più compressivo e di quello meno compressivo, ottenuti dalla diagonalizzazione del tensore di sforzo, eseguita su ogni punto del dominio. In particolare, vengono mostrate le sezioni a \(Y =\) \qty{395.85}{\kilo\meter} e \(Y =\) \qty{233.45}{\kilo\meter}, che attraversano rispettivamente il Klyuchevskoy e il Krasheninnikov.
+
+La convenzione usata assume sforzo positivo compressivo e sforzo negativo estensivo.
+Riguardo la diagonalizzazione del tensore di sforzo si assume che \( \sigma_1 \ge \sigma_2 \ge \sigma_3 \), dove \(\sigma_1\) rappresenta lo sforzo principale massimo (più compressivo) e \(\sigma_3\) quello minimo (meno compressivo).
 
 \subsection{Calcolo degli sforzi prodotti dal terremoto}
+Come anticipato, il campo degli sforzi prodotti dal terremoto è stato calcolato tramite un modello a faglia finita. Per ognuna delle 465 subfaglie \qty{20}{} \(\times\) \qty{10}{\kilo\meter} in cui è stata suddivisa la faglia che ha provocato il terremoto, è stato calcolato il tensore di sforzo di ogni punto del dominio. Il comportamento totale del terremoto è stato ricostruito sommando punto per punto lo sforzo calcolato per ogni subfaglia.
+Per i parametri elastici usati per il calcolo si fa riferimento a Tab. \ref{tab:costanti}.
+
+I valori delle singole componenti degli sforzi, assieme ai valori di \(\sigma_1\) e \(\sigma_3\) sono riportati in Fig. \ref{fig:stress_eq_kly} per una sezione valutata a \(Y=\) \qty{395.85}{\kilo\meter}, passante per il Klyuchevskoy. Lo stesso è stato fatto per una sezione passante per il Krasheninnikov a \(Y=\) \qty{233.45}{\kilo\meter} (Fig. \ref{fig:stress_eq_kra}).
+Gli sforzi prodotti sono, in valore assoluto, dell'ordine di \qty{1e4}{\pascal}.
+
+Lo sforzo principale maggiore (\(\sigma_1\)) e lo sforzo principale minore \(\sigma_3\) vengono riportati in Fig. \ref{fig:diag_eq_kly} per la sezione sul Klyuchevskoy e in Fig. \ref{fig:diag_eq_kly} per il Krasheninnikov.
+
+In Fig. \ref{fig:diag_eq_kly} si nota come lo sforzo meno compressivo \(\sigma_3 \) sia orizzontale pressoché lungo tutta la sezione, con una leggera inclinazione che varia con la profondità. Lo sforzo più compressivo \(\sigma_1\) risulta poco inclinato rispetto alla direzione verticale in profondità verso ovest rispetto all'epicentro, mentre verso est risulta maggiormente inclinato. Salendo lungo \(Z\) si nota che i tratti rossi raffiguranti \(\sigma_1\) si accorciano, questo perché cambia la sua orientazione, di cui la figura mostra una proiezione sul piano \(X-Z\).
+Considerazioni simili si applicano per l'orientazione degli sforzi principali visti lungo la sezione passante per il Krasheninnikov (Fig. \ref{fig:diag_eq_kra}). In questo caso, però, entrambi gli sforzi principali \(\sigma_1\) e \(\sigma_3\) appaiono più inclinati rispetto alla Fig. \ref{fig:diag_eq_kly}, presumibilmente per la maggiore vicinanza (circa \qty{150}{\kilo\meter}) all'epicentro del terremoto.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{plots/stress_eq_kly.pdf}
-    \caption{}
+    \caption{Variazione dei valori delle componenti degli sforzi sismici lungo un piano \(X-Z\) per una sezione passante per il vulcano Klyuchevskoy. Per ogni componente la scala colorata è calibrata in modo diverso, con il blu più scuro ad indicare il valore più negativo e il giallo più intenso quello più positivo. Lo stesso si applica per \(\sigma_1\) e \(\sigma_3\) nell'ultima riga. La figura in basso a destra è riportata in grande in Fig. \ref{fig:diag_eq_kly}.}
     \label{fig:stress_eq_kly}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{plots/stress_eq_kra.pdf}
-    \caption{}
+    \caption{Variazione dei valori delle componenti degli sforzi sismici lungo un piano \(X-Z\) per una sezione passante per il vulcano Krasheninnikov. Per ogni componente la scala colorata è calibrata in modo diverso, con il blu più scuro ad indicare il valore più negativo e il giallo più intenso quello più positivo. Lo stesso si applica per \(\sigma_1\) e \(\sigma_3\) nell'ultima riga. La figura in basso a destra è riportata in grande in Fig. \ref{fig:diag_eq_kra}.}
     \label{fig:stress_eq_kra}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\linewidth]{plots/diag_eq_kly.pdf}
-    \caption{}
+    \includegraphics[width=0.8\linewidth]{plots/diag_eq_kly.pdf}
+    \caption{Orientazione dello sforzo più compressivo \(\sigma_1\) (in rosso) e dello sforzo meno compressivo \(\sigma_3\) (in blu) lungo un piano \(X-Z\) per una sezione passante per il vulcano Klyuchevskoy.}
     \label{fig:diag_eq_kly}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\linewidth]{plots/diag_eq_kra.pdf}
-    \caption{}
+    \includegraphics[width=0.8\linewidth]{plots/diag_eq_kra.pdf}
+    \caption{Orientazione dello sforzo più compressivo \(\sigma_1\) (in rosso) e dello sforzo meno compressivo \(\sigma_3\) (in blu) lungo un piano \(X-Z\) per una sezione passante per il vulcano Krasheninnikov.}
     \label{fig:diag_eq_kra}
 \end{figure}
 
@@ -152,14 +168,14 @@ Si è quindi calcolato un modello pre-sismico del campo di sforzo della regione,
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\linewidth]{plots/diag_reg_kly.pdf}
+    \includegraphics[width=0.8\linewidth]{plots/diag_reg_kly.pdf}
     \caption{}
     \label{fig:diag_reg_kly}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\linewidth]{plots/diag_reg_kra.pdf}
+    \includegraphics[width=0.8\linewidth]{plots/diag_reg_kra.pdf}
     \caption{}
     \label{fig:diag_reg_kra}
 \end{figure}
@@ -169,14 +185,14 @@ Si è quindi calcolato un modello pre-sismico del campo di sforzo della regione,
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\linewidth]{plots/diag_top_kly.pdf}
+    \includegraphics[width=0.8\linewidth]{plots/diag_top_kly.pdf}
     \caption{}
     \label{fig:diag_top_kly}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\linewidth]{plots/diag_top_kra.pdf}
+    \includegraphics[width=0.8\linewidth]{plots/diag_top_kra.pdf}
     \caption{}
     \label{fig:diag_top_kra}
 \end{figure}
@@ -186,14 +202,14 @@ Si è quindi calcolato un modello pre-sismico del campo di sforzo della regione,
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\linewidth]{plots/total_kly.pdf}
+    \includegraphics[width=0.8\linewidth]{plots/total_kly.pdf}
     \caption{}
     \label{fig:total_kly}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\linewidth]{plots/total_kra.pdf}
+    \includegraphics[width=0.8\linewidth]{plots/total_kra.pdf}
     \caption{}
     \label{fig:total_kra}
 \end{figure}
