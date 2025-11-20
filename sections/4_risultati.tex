@@ -1,13 +1,13 @@
 \chapter{Risultati}
 
-In questo capitolo vengono presentati i risultati delle simulazioni numeriche relative al terremoto di magnitudo \(M_w = 8.8\) del 29 luglio 2025 in Kamchatka. L'obiettivo principale è calcolare il campo di sforzo statico generato dal terremoto per verificare se l'evento abbia potuto influenzare l'attività eruttiva di Klyuchevskoy e Krasheninnikov avvenuta nei giorni successivi. Per modellizzare il terremoto si usano i parametri di inversione calcolati da \citet{usgs2025qw60finitefault} basati su un modello a faglia finita in cui la faglia è suddivisa in \qty{465}{} subfaglie di lunghezza \(L= \) \qty{20}{\kilo\meter} e larghezza \(W= \) \qty{10}{\kilo\meter}. 
+In questo capitolo vengono presentati i risultati delle simulazioni numeriche relative al terremoto di magnitudo \(M_w = 8.8\) del 29 luglio 2025 in Kamchatka. L'obiettivo principale è calcolare il campo di sforzo statico generato dal terremoto per verificare se l'evento abbia potuto influenzare l'attività eruttiva di Klyuchevskoy e Krasheninnikov avvenuta nei giorni successivi. Per simulare il terremoto si usano i parametri di inversione calcolati da \citet{usgs2025qw60finitefault} basati su un modello a faglia finita in cui la faglia è suddivisa in \qty{465}{} subfaglie di lunghezza \(L= \) \qty{20}{\kilo\meter} e larghezza \(W= \) \qty{10}{\kilo\meter}. 
 
 \subsubsection{Definizione del sistema di riferimento}
 Per tutti i risultati presentati si utilizza un sistema di riferimento basato sulle coordinate East-North-Up (ENU), dove l'asse delle ascisse è posto lungo la direzione est, quello delle ordinate lungo il nord e l'altezza viene considerata positiva verso l'alto. L'origine del sistema di riferimento è posizionata sull'epicentro, all'altezza del livello del mare. Le coordinate dei vulcani Klyuchevskoy e Krasheninnikov in tale sistema di riferimento sono riportate in Tab. \ref{tab:coordinate_vulcani}.
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{c|cc|ccc}
+    \begin{tabular}{cccccc}
     \toprule
         vulcano & latitudine (\(^\circ\)) & longitudine (\(^\circ\)) & E (\qty{}{\meter}) & N (\qty{}{\meter}) & U (\qty{}{\meter}) \\
     \midrule
@@ -21,7 +21,7 @@ Per tutti i risultati presentati si utilizza un sistema di riferimento basato su
 \end{table}
 
 \subsubsection{Definizione del dominio di calcolo}
-Il calcolo numerico del campo di sforzo è stato effettuato su un dominio tale da includere entrambi i vulcani e una buona parte della regione della Kamchatka attorno ad essi. Si è realizzata una griglia discreta con un passo spaziale di \(\Delta x = \Delta y = \Delta z = \) \qty{10}{\kilo\meter}, entro i seguenti limiti:
+Il calcolo numerico del campo di sforzo è stato effettuato su un dominio che ricopre la porzione centrale della Kamchatka attorno ai due vulcani. Si è realizzata una griglia discreta con un passo spaziale di \(\Delta x = \Delta y = \Delta z = \) \qty{10}{\kilo\meter}, entro i seguenti limiti:
 
 \begin{itemize}
     \item \(X\) (direzione est): da \qty{-200}{\kilo\meter} a \qty{100}{\kilo\meter};
@@ -58,25 +58,40 @@ Con un errore relativo rispetto al valore riportato del \(2.36 \% \) si può con
 
 \section{Calcolo degli spostamenti e confronto con quelli ottenuti da USGS}
 
+Per verificare la validità della simulazione numerica sono stati calcolati gli spostamenti superficiali tramite i parametri di inversione forniti da \citet{usgs2025qw60finitefault} e confrontati con quelli ottenuti dallo stesso ente. Gli spostamenti in esame fanno riferimento solo alla superficie (\(z=0\)). Il dominio utilizzato per i punti di calcolo è lo stesso utilizzato dall'ente statunitense, così da poter effettuare un confronto più accurato. Gli spostamenti superficiali possono essere orizzontali (Fig. \ref{fig:spostamenti_orizzontali}), ad indicare di quanto un punto sulla superficie si sia spostato sul piano E-N e verticali (Fig. \ref{fig:spostamenti_verticali}), per lo spostamento lungo la verticale (asse Up).
 
+In Fig. \ref{fig:spostamenti_orizzontali} si nota come gli spostamenti orizzontali assumano valori maggiori sotto l'epicentro del terremoto, in una zona distante centinaia di chilometri dalla posizione dei vulcani in esame. Risultano diretti verso sud-est, indicando che la placca di Okhotsk sovrastante si è mossa in direzione opposta alla placca del Pacifico, il cui moto relativo di subduzione è in verso contrario, in accordo con la geometria della faglia.
 
-\begin{figure}[H]
+\begin{figure}[!b]
     \centering
     \includegraphics[width=1\linewidth]{plots/spostamenti_orizzontali.pdf}
-    \caption{}
+    \caption{Spostamenti orizzontali prodotti dal terremoto del 30 luglio 2025 in Kamchatka. A sinistra il campo ottenuto con i dati presi da \citet{usgs2025qw60finitefault}, a destra il campo ottenuto con un modello a faglia finita basato su dislocazioni rettangolari. L'epicentro è indicato dal punto rosso in posizione \((0,0)\). Il punto giallo indica la posizione del Klyuchevskoy, quello verde del Krasheninnikov.}
     \label{fig:spostamenti_orizzontali}
 \end{figure}
 
+Coerentemente, anche gli spostamenti verticali (Fig. \ref{fig:spostamenti_verticali}) sono significativi nella stessa zona e si annullano rapidamente allontanandosi. In particolare si ha un innalzamento sul lato della placca del Pacifico e un abbassamento sul lato della placca di Okhotsk.
 
-\begin{figure}[H]
+Per verificare entro quanto fossero compatibili i due risultati è stata calcolata la differenza tra i valori ottenuti dalla simulazione e quelli calcolati da \citet{usgs2025qw60finitefault} (Fig. \ref{fig:spostamento_differenza}). Nella zona dove gli spostamenti sono più significativi emergono differenze maggiori (la differenza massima per ogni componente risulta di circa un metro su spostamenti di qualche metro). Nonostante ciò, nella zona in cui ricadono i vulcani le differenze sono pressoché nulle.
+Il modello adottato può essere considerato valido, in grado di riprodurre efficacemente la forma del campo spostamenti superficiali prodotti dal terremoto e, con precisione maggiore, gli spostamenti nell'area in cui sono situati i vulcani.
+
+\begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{plots/spostamenti_verticali.pdf}
-    \caption{}
+    \caption{Spostamenti verticali prodotti dal terremoto del 30 luglio 2025 in Kamchatka. A sinistra il campo ottenuto con i dati presi da \citet{usgs2025qw60finitefault}, a destra il campo ottenuto con un modello a faglia finita basato su dislocazioni rettangolari.}
     \label{fig:spostamenti_verticali}
 \end{figure}
 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=1\linewidth]{plots/spostamento_differenza.pdf}
+    \caption{Differenza tra gli spostamenti superficiali pubblicati da \citet{usgs2025qw60finitefault} e quelli calcolati. Le differenze sono maggiori dove il campo degli spostamenti è più significativo, trascurabili nella regione attorno ai vulcani. A sinistra la differenza per gli spostamenti orizzontali. L'epicentro è indicato in blu, i vulcani come in Fig. \ref{fig:spostamenti_orizzontali}. A destra la differenza per gli spostamenti verticali.
+    }
+    \label{fig:spostamento_differenza}
+\end{figure}
 
 \section{Calcolo del campo di sforzo}
+Lo scopo principale del lavoro è vedere come il campo di sforzo cambia a seguito dell'attività sismica e se questo cambiamento negli sforzi può portare i dicchi magmatici a modificare il loro percorso. Per prima cosa è stato calcolato il campo di sforzo prodotto dal terremoto, con lo stesso modello a faglia finita utilizzato per il calcolo degli spostamenti superficiali.
+Si è quindi calcolato un modello pre-sismico del campo di sforzo della regione, basato sulle caratteristiche tettoniche della regione e sulla topografia, 
 
 \subsection{Calcolo degli sforzi prodotti dal terremoto}
 
@@ -110,7 +125,7 @@ Con un errore relativo rispetto al valore riportato del \(2.36 \% \) si può con
 
 \subsection{Implementazione di uno stress regionale}
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     \begin{tikzpicture}[>=Stealth, scale=3.5]
 
@@ -190,22 +205,23 @@ Con un errore relativo rispetto al valore riportato del \(2.36 \% \) si può con
 
 \begin{table}[H]
     \centering
-    \setlength{\tabcolsep}{4pt}
-    \begin{tabular}{c||ccc|ccc}
+    \begin{tabular}{ccccccc}
     \toprule
-    & \multicolumn{3}{c}{Scenario di Riferimento} & \multicolumn{3}{c}{Scenario Post-Sismico} \\
-    \cmidrule(lr){2-4} \cmidrule(lr){5-7}
-    Dicco & X & Y & Z & X & Y & Z \\
-    & (\qty{}{\kilo\meter}) & (\qty{}{\kilo\meter}) & (\qty{}{\kilo\meter}) & (\qty{}{\kilo\meter}) & (\qty{}{\kilo\meter}) & (\qty{}{\kilo\meter}) \\
+    & \multicolumn{3}{c}{scenario pre-sismico} & \multicolumn{3}{c}{scenario post-sismico} \\
+
     \midrule
-    dike1 & -118.22 & 392.88 & 0.03 & -118.27 & 392.76 & 0.03 \\
-    dike2 & -93.48  & 425.44 & 0.03 & -93.52  & 425.35 & 0.04 \\
-    dike3 & -67.15  & 458.38 & 0.03 & -67.18  & 458.33 & 0.04 \\
-    dike4 & -43.24  & 492.10 & 0.05 & -43.26  & 492.06 & 0.05 \\
-    dike5 & -19.25  & 524.95 & 0.03 & -19.27  & 524.93 & 0.03 \\
-    dike6 &   5.78  & 558.70 & 0.01 &   5.78  & 558.68 & 0.01 \\
-    dike7 &  31.63  & 590.77 & 0.08 &  31.62  & 590.76 & 0.08 \\
-    dike8 &  56.41  & 623.62 & 0.04 &  56.40  & 623.62 & 0.04 \\
+    dicco & X (\qty{}{\kilo\meter}) & Y (\qty{}{\kilo\meter}) & Z (\qty{}{\kilo\meter}) & X (\qty{}{\kilo\meter}) & Y (\qty{}{\kilo\meter}) & Z (\qty{}{\kilo\meter}) \\
+
+    \midrule
+    dicco 1 & -118.22 & 392.88 & 0.03 & -118.27 & 392.76 & 0.03 \\
+    dicco 2 & -93.48  & 425.44 & 0.03 & -93.52  & 425.35 & 0.04 \\
+    dicco 3 & -67.15  & 458.38 & 0.03 & -67.18  & 458.33 & 0.04 \\
+    dicco 4 & -43.24  & 492.10 & 0.05 & -43.26  & 492.06 & 0.05 \\
+    dicco 5 & -19.25  & 524.95 & 0.03 & -19.27  & 524.93 & 0.03 \\
+    dicco 6 &   5.78  & 558.70 & 0.01 &   5.78  & 558.68 & 0.01 \\
+    dicco 7 &  31.63  & 590.77 & 0.08 &  31.62  & 590.76 & 0.08 \\
+    dicco 8 &  56.41  & 623.62 & 0.04 &  56.40  & 623.62 & 0.04 \\
+
     \bottomrule
     \end{tabular}
     \caption{Confronto tra le coordinate finali di arresto dei dicchi nello scenario senza terremoto (Riferimento) e in quello con l'aggiunta dello stress co-sismico.}
