@@ -100,8 +100,29 @@ La convenzione usata assume sforzo positivo compressivo e sforzo negativo estens
 Riguardo la diagonalizzazione del tensore di sforzo si assume che \( \sigma_1 \ge \sigma_2 \ge \sigma_3 \), dove \(\sigma_1\) rappresenta lo sforzo principale massimo (più compressivo) e \(\sigma_3\) quello minimo (meno compressivo).
 
 \subsection{Calcolo degli sforzi prodotti dal terremoto}
-Come anticipato, il campo degli sforzi prodotti dal terremoto è stato calcolato tramite un modello a faglia finita. Per ognuna delle 465 subfaglie \qty{20}{} \(\times\) \qty{10}{\kilo\meter} in cui è stata suddivisa la faglia che ha provocato il terremoto, è stato calcolato il tensore di sforzo di ogni punto del dominio. Il comportamento totale del terremoto è stato ricostruito sommando punto per punto lo sforzo calcolato per ogni subfaglia.
+Come anticipato, il campo degli sforzi prodotti dal terremoto è stato calcolato tramite un modello a faglia finita. 
+
+Come specificato nel \textit{Capitolo 2}, per tenere conto della curvatura della Terra, la faglia è stata divisa in tre segmenti a cui è stato associato un diverso valore di dip \(\delta\), minore lungo la faglia e maggiore in direzione nord-ovest.
+Il valore dello strike \(\Phi_f\) è invece lo stesso per tutti e tre i segmenti. \(\Phi_f\) e \(\delta\) sono riportati in Tab. \ref{tab:segmenti}. I tre segmenti sono quindi stati divisi in 465 subfaglie totali, ognuna con i propri valori di slip, rake \(\lambda\) e profondità del centro geometrico della subfaglia rettangolare.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccc}
+    \toprule
+        segmento & \(\Phi_f\) (\(^\circ\)) & \(\delta\) (\(^\circ\)) \\
+    \midrule
+        \romannumeral 1 & 217.0 & 6.5 \\
+        \romannumeral 2 & 217.0 & 17.0 \\
+        \romannumeral 3 & 217.0 & 28.0 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Valori di strike e dip associati ai tre segmenti in cui è stata suddivisa la faglia.}
+    \label{tab:segmenti}
+\end{table}
+
+Per ognuna delle 465 subfaglie \qty{20}{\kilo\meter} \(\times\) \qty{10}{\kilo\meter}, è stato calcolato il tensore di sforzo di ogni punto del dominio. Il comportamento totale del terremoto è stato ricostruito sommando punto per punto lo sforzo calcolato per ogni subfaglia.
 Per i parametri elastici usati per il calcolo si fa riferimento a Tab. \ref{tab:costanti}.
+
 
 I valori delle singole componenti degli sforzi, assieme ai valori di \(\sigma_1\) e \(\sigma_3\) sono riportati in Fig. \ref{fig:stress_eq_kly} per una sezione valutata a \(Y=\) \qty{395.85}{\kilo\meter}, passante per il Klyuchevskoy. Lo stesso è stato fatto per una sezione passante per il Krasheninnikov a \(Y=\) \qty{233.45}{\kilo\meter} (Fig. \ref{fig:stress_eq_kra}).
 Gli sforzi prodotti sono, in valore assoluto, dell'ordine di \qty{1e4}{\pascal}.
@@ -120,16 +141,16 @@ Considerazioni simili si applicano per l'orientazione degli sforzi principali vi
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{plots/stress_eq_kra.pdf}
-    \caption{Variazione dei valori delle componenti degli sforzi sismici lungo un piano \(X-Z\) per una sezione passante per il vulcano Krasheninnikov. Per ogni componente la scala colorata è calibrata in modo diverso, con il blu più scuro ad indicare il valore più negativo e il giallo più intenso quello più positivo. Lo stesso si applica per \(\sigma_1\) e \(\sigma_3\) nell'ultima riga. La figura in basso a destra è riportata in grande in Fig. \ref{fig:diag_eq_kra}.}
-    \label{fig:stress_eq_kra}
+    \includegraphics[width=0.8\linewidth]{plots/diag_eq_kly.pdf}
+    \caption{Orientazione dello sforzo più compressivo \(\sigma_1\) (in rosso) e dello sforzo meno compressivo \(\sigma_3\) (in blu) lungo un piano \(X-Z\) per una sezione passante per il vulcano Klyuchevskoy. Gli sforzi principali si riferiscono al solo campo di sforzo prodotto dal terremoto.}
+    \label{fig:diag_eq_kly}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{plots/diag_eq_kly.pdf}
-    \caption{Orientazione dello sforzo più compressivo \(\sigma_1\) (in rosso) e dello sforzo meno compressivo \(\sigma_3\) (in blu) lungo un piano \(X-Z\) per una sezione passante per il vulcano Klyuchevskoy. Gli sforzi principali si riferiscono al solo campo di sforzo prodotto dal terremoto.}
-    \label{fig:diag_eq_kly}
+    \includegraphics[width=0.8\linewidth]{plots/stress_eq_kra.pdf}
+    \caption{Variazione dei valori delle componenti degli sforzi sismici lungo un piano \(X-Z\) per una sezione passante per il vulcano Krasheninnikov. Per ogni componente la scala colorata è calibrata in modo diverso, con il blu più scuro ad indicare il valore più negativo e il giallo più intenso quello più positivo. Lo stesso si applica per \(\sigma_1\) e \(\sigma_3\) nell'ultima riga. La figura in basso a destra è riportata in grande in Fig. \ref{fig:diag_eq_kra}.}
+    \label{fig:stress_eq_kra}
 \end{figure}
 
 \begin{figure}[H]
@@ -140,8 +161,11 @@ Considerazioni simili si applicano per l'orientazione degli sforzi principali vi
 \end{figure}
 
 \subsection{Implementazione di uno stress regionale}
+Osservando la regione della Kamchatka, con particolare riferimento alla zona inclusa nel dominio di calcolo definito in precedenza, si riconosce una zona di depressione, corrispondente alla Central Kamchatka Depression (CKD) (Fig. \ref{fig:Kamchatka_volcano_map}). La formazione di una zona di depressione è generalmente legata alla presenza di uno sforzo tettonico estensivo, che provoca l'abbassamento del suolo. Lungo la faglia, corrispondente alla parte orientale del dominio di calcolo, la zona risulta in compressione, per via della subduzione della placca del Pacifico.
+Sforzi tettonici di questo tipo sono dell'ordine di \qty{1e6}{\pascal}.
 
-\begin{figure}[H]
+
+\begin{figure}[!b]
     \centering
     \begin{tikzpicture}[>=Stealth, scale=3.5]
 
@@ -162,9 +186,48 @@ Considerazioni simili si applicano per l'orientazione degli sforzi principali vi
         \node[orange, right, font=\small] at (0.1, -0.5) {$\Phi_f$};
 
     \end{tikzpicture}
-    \caption{Relazione geometrica tra il sistema ENU (nero), il sistema ruotato (rosso) e l'angolo di strike $\Phi_f$ (arancione). L'asse $-Y'$ corrisponde alla direzione di scorrimento della faglia.}
+    \caption{Relazione geometrica tra il sistema ENU (nero), il sistema ruotato (rosso) e l'angolo di strike $\Phi_f$ (arancione). L'asse $-Y'$ corrisponde alla direzione individuata dalla traccia della faglia (coincide con la direzione \(x_1\) utilizzata per descrivere la geometrica della faglia in Fig. \ref{fig:faglia}).}
     \label{fig:assi_strike}
 \end{figure}
+
+Per questo motivo è stato implementato un campo di sforzo regionale, basato su un gradiente di sforzo lineare lungo la direzione \(X'\) raffigurata in Fig. \ref{fig:assi_strike}. La figura mostra un nuovo sistema di riferimento ruotato di un angolo \(theta\) in senso orario rispetto al sistema di riferimento ENU, definito come \(\theta = \Phi_f - 180^\circ = 37^\circ\). In questo sistema di riferimento l'asse \(X'\) corrisponde alla direzione individuata dall'asse \(X_2\) in Fig. \ref{fig:faglia}, mentre l'asse \(Y'\) corrisponde alla direzione individuata dalla traccia della faglia (asse \(X_1\) in Fig. \ref{fig:faglia}).
+
+Lo sforzo regionale, per rappresentare una condizione di estensione prima e compressione poi, lungo l'asse \(X'\), è stato definito con \(\sigma'_{X'X'}\) più estensivo verso nord-ovest e più compressivo verso sud-est, variando linearmente da \qty{-5e6}{\pascal} a \qty{5e6}{\pascal}. Tutte le altre componenti del tensore di sforzo sono state considerate nulle, in quanto il carattere estensivo / compressivo della regione si manifesta in direzione \(X'\).
+
+Le componenti del tensore di sforzo sono quindi state trasformate nel sistema di riferimento ENU tramite una rotazione nel piano \(X-Y\) (nord-est).
+La matrice di rotazione è stata definita come
+
+\begin{equation}
+    \label{eq:matrice_rotazione}
+   R =
+    \begin{bmatrix}
+    \cos(\theta) & \sin(\theta) & 0 \\
+    -\sin(\theta) & \cos(\theta) & 0 \\
+    0 & 0 & 1
+   \end{bmatrix}.
+\end{equation}
+
+Questa permette di effettuare una rotazione in senso orario di un angolo \(\theta\) e va intesa come la matrice che trasforma le componenti di un vettore dal sistema ruotato (rosso in Fig. \ref{fig:assi_strike}) al sistema ENU (nero in Fig. \ref{fig:assi_strike}).
+Per trasformare il tensore di sforzo dal sistema ruotato a quello ENU si utilizza la relazione 
+
+\begin{equation}
+  \label{eq:rotazione_tensore}
+  \sigma = R \, \sigma' \, R^{\mathsf T},
+\end{equation}
+
+dove \(\sigma'\) è il tensore di sforzo nel sistema ruotato, \(\sigma \) quello nel sistema ENU e \(R^T\) la trasposta della matrice di rotazione.
+
+Dopo aver ruotato lo sforzo per ogni punto del dominio di calcolo, è stato diagonalizzato. Le sezioni per \(Y=\) \qty{395.85}{\kilo\meter} passante per il Klyuchevskoy e per \(Y=\) \qty{233.45}{\kilo\meter} passante per il Krasheninnikov sono riportate rispettivamente in Fig. \ref{fig:diag_reg_kly} e in Fig. \ref{fig:diag_reg_kra}.
+
+In Fig. \ref{fig:diag_reg_kly} si nota come \(\sigma_3\) sia approssimativamente orizzontale (parallelo all'asse \(X\)) tra \(X=\)\,\qty{-200}{\kilo\meter} e \(X=\)\,\qty{50}{\kilo\meter}.
+Proseguendo fino a \(X=\) \qty{100}{\kilo\meter}, limite del dominio di calcolo lungo \(X\), è \(\sigma_1\) a essere orientato orizzontalmente.
+Quando uno dei due sforzi principali è diretto orizzontalmente, l'altro risulta disposto perpendicolarmente, in direzione verticale, oppure inclinato nel piano \(X-Y\). In questo caso la sua proiezione sul piano \(X-Z\) appare ancora orizzontale in figura, ma il segmento risulta più corto rispetto all'altro asse principale.
+
+Le stesse considerazioni si applicano per la sezione lungo il Krasheninnikov in Fig. \ref{fig:diag_reg_kra}. In questo caso, partendo da \(X=\) \qty{-200}{\kilo\meter}, \(\sigma_3\) è diretto orizzontalmente solo per qualche decina di chilometri, mentre \(\sigma_1\) risulta orizzontale nella parte restante della sezione.
+
+In entrambi i casi non si osservano variazioni lungo la verticale, in accordo con l'implementazione dello sforzo regionale priva di componenti dipendenti da \(Z\).
+Inoltre, lo sforzo disposto orizzontalmente è inizialmente \(\sigma_3\), quello meno compressivo (in questo caso estensivo). Procedendo verso destra la situazione si inverte e risulta \(\sigma_1\), più compressivo, lo sforzo principale disposto orizzontalmente. Questo cambiamento è in accordo con il carattere prima estensivo e poi compressivo imposto alla regione, nel piano \(X-Y\).
+
 
 \begin{figure}[H]
     \centering
@@ -182,6 +245,14 @@ Considerazioni simili si applicano per l'orientazione degli sforzi principali vi
 
 \subsection{Aggiunta della topografia}
 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{graphics/topography_profile.png}
+    \caption{Profilo topografico calcolato su una sezione (realizzata lungo l'asse \(X'\)) della regione della Kamchatka. Il profilo è stato realizzato con il software GeoMapApp. Le coordinate in figura non coincidono con quelle del sistema di riferimento adottato centrato nell'epicentro del terremoto.}
+    \label{fig:topography}
+\end{figure}
 
 \begin{figure}[H]
     \centering
@@ -229,14 +300,14 @@ Considerazioni simili si applicano per l'orientazione degli sforzi principali vi
     dicco & X (\qty{}{\kilo\meter}) & Y (\qty{}{\kilo\meter}) & Z (\qty{}{\kilo\meter}) & X (\qty{}{\kilo\meter}) & Y (\qty{}{\kilo\meter}) & Z (\qty{}{\kilo\meter}) \\
 
     \midrule
-    dicco 1 & -118.22 & 392.88 & 0.03 & -118.27 & 392.76 & 0.03 \\
-    dicco 2 & -93.48  & 425.44 & 0.03 & -93.52  & 425.35 & 0.04 \\
-    dicco 3 & -67.15  & 458.38 & 0.03 & -67.18  & 458.33 & 0.04 \\
-    dicco 4 & -43.24  & 492.10 & 0.05 & -43.26  & 492.06 & 0.05 \\
-    dicco 5 & -19.25  & 524.95 & 0.03 & -19.27  & 524.93 & 0.03 \\
-    dicco 6 &   5.78  & 558.70 & 0.01 &   5.78  & 558.68 & 0.01 \\
-    dicco 7 &  31.63  & 590.77 & 0.08 &  31.62  & 590.76 & 0.08 \\
-    dicco 8 &  56.41  & 623.62 & 0.04 &  56.40  & 623.62 & 0.04 \\
+    \romannumeral 1 & -118.22 & 392.88 & 0.03 & -118.27 & 392.76 & 0.03 \\
+    \romannumeral 2 & -93.48  & 425.44 & 0.03 & -93.52  & 425.35 & 0.04 \\
+    \romannumeral 3 & -67.15  & 458.38 & 0.03 & -67.18  & 458.33 & 0.04 \\
+    \romannumeral 4 & -43.24  & 492.10 & 0.05 & -43.26  & 492.06 & 0.05 \\
+    \romannumeral 5 & -19.25  & 524.95 & 0.03 & -19.27  & 524.93 & 0.03 \\
+    \romannumeral 6 &   5.78  & 558.70 & 0.01 &   5.78  & 558.68 & 0.01 \\
+    \romannumeral 7 &  31.63  & 590.77 & 0.08 &  31.62  & 590.76 & 0.08 \\
+    \romannumeral 8 &  56.41  & 623.62 & 0.04 &  56.40  & 623.62 & 0.04 \\
 
     \bottomrule
     \end{tabular}
