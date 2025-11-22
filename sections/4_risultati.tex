@@ -100,8 +100,7 @@ La convenzione usata assume sforzo positivo compressivo e sforzo negativo estens
 Riguardo la diagonalizzazione del tensore di sforzo si assume che \( \sigma_1 \ge \sigma_2 \ge \sigma_3 \), dove \(\sigma_1\) rappresenta lo sforzo principale massimo (più compressivo) e \(\sigma_3\) quello minimo (meno compressivo).
 
 \subsection{Calcolo degli sforzi prodotti dal terremoto}
-Come anticipato, il campo degli sforzi prodotti dal terremoto è stato calcolato tramite un modello a faglia finita. 
-
+Il campo degli sforzi prodotti dal terremoto è stato calcolato con un modello a faglia finita.
 Come specificato nel \textit{Capitolo 2}, per tenere conto della curvatura della Terra, la faglia è stata divisa in tre segmenti a cui è stato associato un diverso valore di dip \(\delta\), minore lungo la faglia e maggiore in direzione nord-ovest.
 Il valore dello strike \(\Phi_f\) è invece lo stesso per tutti e tre i segmenti. \(\Phi_f\) e \(\delta\) sono riportati in Tab. \ref{tab:segmenti}. I tre segmenti sono quindi stati divisi in 465 subfaglie totali, ognuna con i propri valori di slip, rake \(\lambda\) e profondità del centro geometrico della subfaglia rettangolare.
 
@@ -245,7 +244,48 @@ Inoltre, lo sforzo disposto orizzontalmente è inizialmente \(\sigma_3\), quello
 
 \subsection{Aggiunta della topografia}
 
+Nel \textit{Capitolo 3} si è discusso dell'importanza di carichi e scarichi topografici per l'orientazione degli sforzi in uno spazio semi-infinito.
+L'implementazione di uno sforzo regionale basato su considerazioni tettoniche non è sufficiente, è necessario aggiungere il contributo dato dalla topografia.
+Tramite il software GeoMapApp 3.7.6 (https://www.geomapapp.org/) è stato realizzato il profilo topografico della zona in esame in Fig. \ref{fig:topography}. Questo è stato tracciato all'interno del dominio di calcolo, lungo la direzione \(X'\) indicata in Fig. \ref{fig:assi_strike}. La direzione seguita, andando da sinistra verso destra nella figura, corrisponde a guardare il profilo topografico della regione da nord-ovest verso sud-est, all'interno del dominio di calcolo.
+Risulta quindi che a nord-ovest la zona presenta dei rilievi, seguiti da una depressione, la CKD, per terminare con un'altra zona montuosa verso sud-est.
+I rilievi sono stati modellati come due carichi, mentre la depressione come uno scarico.
+Per farlo sono stati considerati tre blocchi rettangolari, orientati lungo la direzione \(Y'\) (Fig. \ref{fig:assi_strike}) 
+Ad ciascun blocco è stata associata un'altezza \(h\) e una densità \(\rho\).
+I valori sono riportati in Tab. \ref{tab:parametri_blocchi}, insieme alle loro dimensioni.
+La densità è stata scelta uniforme per tutti e tre i blocchi come \(\rho=\) \qty{2700}{\kilogram\per\meter\cubed}, in accordo con il valore medio di densità della crosta continentale \citep{plate_tectonics_book}.
 
+\begin{table}[H]
+    \centering
+    \begin{tabular}{ccccc}
+        \toprule
+        blocco & densità (\qty{}{\kilogram\per\meter\cubed}) & altezza (\qty{}{\meter}) & lunghezza (\qty{}{\kilo\meter}) & larghezza (\qty{}{\kilo\meter}) \\
+        \midrule
+        rilievi NW & 2700 & 800 & 600 & 120 \\
+        depressione (CKD) & 2700 & -800 & 600 & 90 \\
+        rilievi SE & 2700 & 800 & 600 & 90 \\ 
+        \bottomrule
+    \end{tabular}
+    \caption{Valori di densità, altezza, lunghezza e larghezza dei tre blocchi utilizzati per rappresentare la topografia. I valori di lunghezza e larghezza sono intesi rispettivamente lungo \(Y'\) e \(X'\).}
+    \label{tab:parametri_blocchi}
+\end{table}
+
+In Fig. \ref{fig:topography} si nota che la CKD raggiunge approssimativamente il livello del mare.
+La scelta di modellarla come uno scarico, utilizzando un'altezza negativa (Tab. \ref{tab:parametri_blocchi}) è dovuta alla sua struttura. \citet{bacino_sedimenti} ne hanno analizzato la composizione tramite un'analisi tomografica, concludendo che la CKD si estende per circa \qty{8}{\kilo\meter} in profondità ed è costituita da due strati di sedimenti. I sedimenti, però, sono meno densi della crosta continentale. Si è quindi deciso di considerare la regione come uno scarico, poiché di densità minore rispetto ai rilievi circostanti.
+
+Oltre ai carichi appena descritti, sono stati considerati due vulcani Klyuchevskoy e Krasheninnikov. Questi sono stati implementati come un carico cilindrico. In Tab. \ref{tab:topografia_vulcani} vengono riportati i parametri utilizzati per descriverli.
+
+\begin{table}
+    \centering\begin{tabular}{ccccc}
+        \toprule
+        vulcano & posizione & densità (\qty{}{\kilogram\per\meter\cubed}) & altezza effettiva (\qty{}{\meter}) & raggio (\qty{}{\meter}) \\
+        \midrule
+        Klyuchevskoy & depressione & 2700 & 5550 & 5000 \\
+        Krasheninnikov & rilievi SE & 2700 & 1016 & 4500 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Parametri utilizzati per l'implementazione del carico topografico dei vulcani.}
+    \label{tab:topografia_vulcani}
+\end{table}
 
 \begin{figure}[H]
     \centering
@@ -253,6 +293,10 @@ Inoltre, lo sforzo disposto orizzontalmente è inizialmente \(\sigma_3\), quello
     \caption{Profilo topografico calcolato su una sezione (realizzata lungo l'asse \(X'\)) della regione della Kamchatka. Il profilo è stato realizzato con il software GeoMapApp 3.7.6 (https://www.geomapapp.org/). Le coordinate in figura non coincidono con quelle del sistema di riferimento adottato centrato nell'epicentro del terremoto.}
     \label{fig:topography}
 \end{figure}
+
+Definiti i parametri per i vari carichi è stata calcolata la pressione che questi esercitano sulla superficie come, \(p(x,y) = g \rho h(x,y)\), con \(g=\) \qty{9.8}{\meter\per\second\squared} accelerazione di gravità. Si è quindi risolto il problema di Boussinesq, in cui si determinano gli sforzi prodotti da un carico all'interno di un semi-spazio \citep{Boussinesq_Problem}, dove la pressione \(p(x,y)\) esercitata dal carico è uno dei parametri principali.
+
+Al campo di sforzo regionale sono stati sommati i contributi dovuti alla topografia per il tre blocchi e i due vulcani. Gli sforzi ottenuti dalla topografia hanno valori particolarmente elevati in prossimità della superficie, dell'ordine di \qty{1e7}{\pascal}, ma decadono rapidamente in profondità. Le sezioni del campo diagonalizzato vengono mostrate in Fig. \ref{fig:diag_top_kly} e in Fig. \ref{fig:diag_top_kra}. Si nota come, per entrambe le sezioni, il campo di sforzo sia ruotato rispetto alla configurazione data dallo sforzo puramente regionale, come conseguenza dell'aggiunta della topografia.
 
 \begin{figure}[H]
     \centering
@@ -270,6 +314,8 @@ Inoltre, lo sforzo disposto orizzontalmente è inizialmente \(\sigma_3\), quello
 
 \subsubsection{Aggiunta del terremoto}
 
+Al modello ottenuto tramite considerazioni regionali e topografiche è stato quindi aggiunto il contributo dato dal terremoto. In Fig. \ref{fig:total_kly} e in Fig. \ref{fig:total_kra} si nota però come l'evento sismico non influisca affatto sulla rotazione degli assi principali del campo di sforzo. I contributi degli sforzi del terremoto, infatti sono 2-3 ordini di grandezza inferiori rispetto a quelli del campo della regione, non permettendo una variazione nell'orientazione degli sforzi principali.
+I punti di calcolo sono distanti centinaia di chilometri dall'epicentro del terremoto. Inoltre, la Fig. \ref{fig:spostamenti_orizzontali}, mostra come gli effetti del terremoto si siano manifestati principalmente a sud-ovest dell'epicentro, lontano dai punti dai vulcani in esame.
 
 \begin{figure}[H]
     \centering
@@ -289,28 +335,57 @@ Inoltre, lo sforzo disposto orizzontalmente è inizialmente \(\sigma_3\), quello
 
 \section{Influenza sulla risalita del magma}
 
+Una volta calcolato il campo di sforzo prima e dopo il terremoto, è stato possibile simulare le traiettorie di alcuni dicchi e confrontare i loro punti di arrivo. Sono stati presi in esame 8 dicchi, posizionali lungo una retta orientata lungo la direzione \(Y'\) (Fig. \ref{fig:assi_strike}). Nello specifico, i punti di partenza sono stati posizionati a una profondita di \qty{-100}{\kilo\meter}, dove avviene la formazione di magma nel mantello. Le coordinate lungo la direzione E e lungo quella N sono state calcolate dei conseguenza, considerando un angolo di immersione \(\delta = 18^\circ\).
+
+Parametri quali volume del dicco (\(V\)), differenza di densità tra roccia e magna (\(\Delta\rho\)) e resistenza alla frattura (\(K_c\)), sono stati utilizzati per il calcolo delle traiettorie. Sono stati attribuiti gli stessi valori a tutti i dicchi, riportati in \ref{tab:parametri_dicchi}.
+
+I punti di partenza dei dicchi e i loro punti di arrivo, considerando prima il solo campo di sforzo della regione, e aggiungendo poi anche il contributo del terremoto, sono riportati in Tab. \ref{fig:dicco_evoluzione}.
+Come previsto, le traiettorie non subiscono variazioni significative che le portano ad arrestarsi in punti diversi. L'ordine di grandezza con cui le coordinate \(X\) e \(Y\) dei punti di arresto si spostano è di \qty{1e-2}{\kilo\meter}.
+Questi, contestualizzati in un'area vasta come quella in esame, che si estende per \qty{300}{\kilo\meter} lungo est e per \qty{500}{\kilo\meter} lungo nord, risultano poco significativi.
+
+Come previsto, il campo di sforzo del terremoto, nel dominio considerato, risulta troppo debole per cambiare in maniera significativa le orientazioni degli sforzi principali. I dicchi, di conseguenza, non subiscono variazioni considerevoli delle loro traiettorie.
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{ccccccc}
+    \begin{tabular}{cc}
+        \toprule
+        parametro & valore \\
+        \midrule
+        \(V\) & \qty{20e6}{\meter\cubed} \\
+        \(\Delta\rho\) & \qty{200}{\kilogram\per\meter\cubed} \\
+        \(K_c\) & \qty{100e6}{\pascal\meter} \\
+        \bottomrule        
+    \end{tabular}
+    \caption{Valori dei parametri associati ai dicchi nella simulazione.}
+    \label{tab:parametri_dicchi}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \resizebox{\textwidth}{!}{
+    \begin{tabular}{cccccccccc}
     \toprule
-    & \multicolumn{3}{c}{scenario pre-sismico} & \multicolumn{3}{c}{scenario post-sismico} \\
+    & \multicolumn{3}{c}{partenza} 
+    & \multicolumn{3}{c}{arrivo (pre-sismico)} 
+    & \multicolumn{3}{c}{arrivo (post-sismico)} \\
 
     \midrule
-    dicco & X (\qty{}{\kilo\meter}) & Y (\qty{}{\kilo\meter}) & Z (\qty{}{\kilo\meter}) & X (\qty{}{\kilo\meter}) & Y (\qty{}{\kilo\meter}) & Z (\qty{}{\kilo\meter}) \\
-
+    
+    dicco & X (\qty{}{\km}) & Y (\qty{}{\km}) & Z (\qty{}{\km}) & X (\qty{}{\km}) & Y (\qty{}{\km}) & Z (\qty{}{\km}) & X (\qty{}{\km}) & Y (\qty{}{\km}) & Z (\qty{}{\km}) \\
     \midrule
-    \romannumeral 1 & -118.22 & 392.88 & 0.03 & -118.27 & 392.76 & 0.03 \\
-    \romannumeral 2 & -93.48  & 425.44 & 0.03 & -93.52  & 425.35 & 0.04 \\
-    \romannumeral 3 & -67.15  & 458.38 & 0.03 & -67.18  & 458.33 & 0.04 \\
-    \romannumeral 4 & -43.24  & 492.10 & 0.05 & -43.26  & 492.06 & 0.05 \\
-    \romannumeral 5 & -19.25  & 524.95 & 0.03 & -19.27  & 524.93 & 0.03 \\
-    \romannumeral 6 &   5.78  & 558.70 & 0.01 &   5.78  & 558.68 & 0.01 \\
-    \romannumeral 7 &  31.63  & 590.77 & 0.08 &  31.62  & 590.76 & 0.08 \\
-    \romannumeral 8 &  56.41  & 623.62 & 0.04 &  56.40  & 623.62 & 0.04 \\
+    
+    \romannumeral 1 & -100.00 & 378.70 & -100.00 & -123.09 & 395.55 & 0.07 & -123.14 & 395.42 & 0.08 \\
+    \romannumeral 2 &  -75.00 & 411.88 & -100.00 &  -96.67 & 428.48 & 0.05 &  -96.72 & 428.40 & 0.06 \\
+    \romannumeral 3 &  -50.00 & 445.05 & -100.00 &  -72.72 & 462.33 & 0.09 &  -72.76 & 462.27 & 0.10 \\
+    \romannumeral 4 &  -25.00 & 478.23 & -100.00 &  -48.88 & 495.11 & 0.07 &  -48.92 & 495.07 & 0.07 \\
+    \romannumeral 5 &    0.00 & 511.40 & -100.00 &  -24.08 & 528.91 & 0.03 &  -24.09 & 528.87 & 0.03 \\
+    \romannumeral 6 &   25.00 & 544.58 & -100.00 &    2.02 & 560.89 & 0.02 &    2.01 & 560.87 & 0.02 \\
+    \romannumeral 7 &   50.00 & 577.75 & -100.00 &   26.80 & 593.47 & 0.01 &   26.80 & 593.46 & 0.01 \\
+    \romannumeral 8 &   75.00 & 610.93 & -100.00 &   51.84 & 626.14 & 0.02 &   51.83 & 626.14 & 0.02 \\
 
     \bottomrule
     \end{tabular}
-    \caption{Confronto tra le coordinate finali di arresto dei dicchi nello scenario senza terremoto (Riferimento) e in quello con l'aggiunta dello stress co-sismico.}
+    }
+    \caption{Confronto tra le coordinate di partenza e quelle finali di arresto dei dicchi. I punti di arresto sono calcolati sia nel caso puramente regionale, sia nel aggiungendo al campo di sforzo i contributi del terremoto. }
     \label{tab:confronto_arresto}
 \end{table}
