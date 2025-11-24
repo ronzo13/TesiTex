@@ -2,12 +2,12 @@
 
 L'obiettivo di questa tesi è studiare come un terremoto di grande magnitudo possa modificare il campo di sforzo influenzando l'attività vulcanica circostante. Nella prima parte di questo capitolo, quindi, vengono discussi i metodi con cui il campo di sforzo prodotto dal terremoto è stato effettivamente calcolato. In particolare, si fa riferimento ai lavori di Yoshimitsu Okada, in cui quest'ultimo raccoglie e ricava una serie di espressioni analitiche atte a descrivere spostamenti e deformazioni superficiali \citep{okada1985surface} e interni \citep{okada1992internal}, generati da fratture tensili o di taglio in un mezzo elastico semi-infinito. Nel caso specifico del terremoto in esame consideriamo come sorgente del terremoto una dislocazione rettangolare (RD, dall'inglese rectangular dislocation) finita. Nella seconda parte invece si analizzano i dicchi magmatici, con enfasi sulla loro formazione e propagazione.
 
-\section{Modello elastico di Okada per dislocazioni}
+\section{Modello elastico per il campo di deformazione indotto da dislocazioni rettangolari}
 
-Una dislocazione può essere vista come una superficie all'interno di un mezzo elastico, in cui è presente una discontinuità nello spostamento. Nello studio di questi modelli, il mezzo in questione si assume omogeneo e isotropo e viene considerato o come un mezzo elastico infinito (\textit{full-space}) o come un mezzo elastico semi-infinito (\textit{half-space}). Nel caso infinito si assume che il mezzo si estenda indefinitamente in tutte le direzioni. Un modello di questo tipo può essere applicato nel caso in cui si stiano studiando processi che avvengono a profondità tali per cui si può trascurare la superficie della Terra e trattare il mezzo, appunto, come infinito. Nel caso semi-infinito, al contrario, si considera metà dello spazio costituito dal mezzo elastico in questione e l'altra metà priva di alcun mezzo. Risulta utile quando si vuole considerare la presenza della superficie nel modello. Sebbene esistano trattazioni per entrambi i modelli ci si concentra qui sullo studio del caso half-space, che risulta adatto a descrivere il problema in esame.
+Una dislocazione può essere vista come una superficie all'interno di un mezzo elastico, in cui è presente una discontinuità nello spostamento. Nello studio di questi modelli, il mezzo in questione si assume omogeneo e isotropo e viene considerato o come un mezzo elastico infinito (\textit{full-space}) o come un mezzo elastico semi-infinito (\textit{half-space}). Nel caso infinito si assume che il mezzo si estenda indefinitamente in tutte le direzioni. Un modello di questo tipo può essere applicato nel caso in cui si stiano studiando processi che avvengono a profondità tali per cui si può trascurare la superficie della Terra e trattare il mezzo, appunto, come infinito. Nel caso semi-infinito, al contrario, si considera metà dello spazio costituito dal mezzo elastico in questione e l'altra metà priva di alcun mezzo. Risulta utile quando si vuole considerare la presenza della superficie nel modello. Sebbene esistano trattazioni per entrambi i modelli ci si concentra qui sullo studio del caso half-space, che considerando la presenza della superficie libera risulta adatto a descrivere il problema in esame.
 
-Gli spostamenti prodotti da una dislocazione possono essere modellati da due tipi di sorgenti: sorgenti puntiformi e sorgenti rettangolari finite. Considerare gli spostamenti prodotti da una sorgente puntiforme può essere utile nel caso in cui si vada a considerare gli effetti che questa ha prodotto lontano da essa. Se si è sufficientemente lontani infatti si può trascurare la forma della dislocazione e considerare soltanto gli effetti che questa ha prodotto a tali distanze.
-Gli spostamenti prodotti da una qualsiasi dislocazione si ottengono dalla formula di Volterra. Questa formula, che può essere riscritta in diverse forme, all'evenienza più o meno utili, fornisce proprio gli spostamenti dati dallo slip su un generico piano in un mezzo elastico.
+Gli spostamenti prodotti da una dislocazione possono essere modellati da diversi tipi di geometrie di sorgenti, tra cui: sorgenti puntiformi e sorgenti rettangolari finite. Considerare gli spostamenti prodotti da una sorgente puntiforme può essere utile nel caso in cui si vada a considerare gli effetti che questa ha prodotto lontano da essa. Se si è sufficientemente lontani infatti si può trascurare la forma della dislocazione e considerare soltanto gli effetti che questa ha prodotto a tali distanze.
+Gli spostamenti prodotti da una qualsiasi dislocazione si ottengono dalla formula di Volterra. Questa formula fornisce proprio gli spostamenti dati dallo slip su un generico piano in un mezzo elastico.
 L'equazione di Volterra per un mezzo isotropo risulta essere (per la derivazione si fa riferimento a \citet{segall2010})
 
 \begin{equation}
@@ -68,8 +68,8 @@ I miglioramenti apportati da \citet{Nikkhoo2017CDM} permettono quindi di calcola
 
 \section{Trasporto di magma attraverso i dicchi}
 
-Un dicco è una frattura idraulica che trasporta magma all'interno della litosfera. Lo studio della dinamica dei dicchi risulta fondamentale non solo per comprendere la risalita del magma lungo la litosfera, ma anche per spiegare attività di vulcanismo in superficie (molte eruzioni che coinvolgono magma basaltico) e processi di accrescimento della crosta oceanica e continentale \citep{Rubin1995,Rivalta2015}.
-La dimensione di un dicco è data da lunghezza, larghezza e spessore. Tipicamente, lo spessore risulta inferiore alle altre due dimensioni. Questo, infatti, varia dalle decine di centimetri a diversi metri, mentre la lunghezza e larghezza raggiungono dalle centinaia di metri a qualche chilometro \citep{Rivalta2015}. Può quindi essere pensato come un sottile foglio di magna, che si propaga nella litosfera.
+Un dicco è una frattura idraulica che trasporta magma all'interno della litosfera. Lo studio della dinamica dei dicchi risulta fondamentale non solo per comprendere la risalita del magma lungo la litosfera, ma anche per spiegare attività di vulcanismo in superficie e processi di accrescimento della crosta oceanica e continentale \citep{Rubin1995,Rivalta2015}.
+La dimensione di un dicco è data da lunghezza, larghezza e spessore. Tipicamente, lo spessore risulta molto inferiore alle altre due dimensioni. Questo, infatti, varia dalle decine di centimetri a diversi metri, mentre la lunghezza e larghezza raggiungono dalle centinaia di metri alle decine di chilometri \citep{Rivalta2015}. Può quindi essere pensato come una sottile lastra di magna, che si propaga nella litosfera.
 Nello studio della propagazione del magma tramite una frattura, vengono distinte due tipologie \citep{Nakashima1993}. La prima riguarda la propagazione di una frattura collegata ad un reservoir di magma, dove questo alimenta il volume di magma all'interno della frattura. La seconda riguarda invece una frattura slegata da un reservoir, la cui dinamica è dovuta alla spinta di galleggiamento del fluido nella frattura, senza l'influenza di un serbatoio esterno. In questa tesi si prende in esame il secondo caso.
 
 \begin{figure}[H]
@@ -83,8 +83,8 @@ Nello studio della propagazione del magma tramite una frattura, vengono distinte
 \subsection{Propagazione per spinta di galleggiamento}
 
 Una frattura di dimensioni finite contenente un fluido, come può essere un dicco, può risalire verso l'alto se il fluido al suo interno è meno denso della roccia circostante.
-Con l'aumentare della profondità si ha un'aumento della spinta di galleggiamento prodotta dalla differenza di pressione tra il magma all'interno della frattura e la roccia all'esterno.
-Si ha infatti un aumento della pressione litostatica, che risulta maggiore nella parte inferiore del dicco rispetto a quella superiore (Fig. \ref{fig:dicco_evoluzione}).
+Con l'aumentare della profondità si ha un aumento della spinta di galleggiamento prodotta dalla differenza di pressione tra il magma all'interno della frattura e la roccia all'esterno.
+Si ha infatti un aumento della pressione litostatica, che risulta maggiore nella parte inferiore del dicco rispetto a quella superiore (Fig. \ref{fig:dicco_evoluzione}). \textcolor{red}{Immaginando una colonna di magma nella crosta terrestre si ha che, all'aumentare della profondità, aumentano la pressione litostatica all'esterno del dicco, che la pressione del magma al suo interno. La prima è data da \(\rho_r g z\), la seconda da \(\rho_m g z\), (dove \(\rho_m\) è la densità del magma, \(\rho_r\) della roccia e \(g\) l'accelerazione di gravità). Più si scende in profondità, meno la pressione del magma è in grado di bilanciare quella esterna (litostatica). La colonna di magma quindi, si schiaccia nella parte inferiore e si gonfia in quella superiore, dove ora esercita maggiore sforzo, fratturando la roccia e propagandosi se vengono soddisfatte le condizioni necessarie.}
 
 \begin{figure}[H]
     \centering
@@ -93,7 +93,7 @@ Si ha infatti un aumento della pressione litostatica, che risulta maggiore nella
     \label{fig:dicco_evoluzione}
 \end{figure}
 
-Indicando con \( \Delta\gamma = \Delta\rho g = (\rho_r-\rho_m)g\) il gradiente di pressione dovuto alla spinta di galleggiamento (dove \(\rho_m\) è la densità del magma, \(\rho_r\) della roccia e \(g\) l'accelerazione di gravità), \citet{Dahm2000} ha mostrato che in una frattura che si estende verticalmente per una lunghezza di \(2a\) (partendo da \(z=-a\), con z che aumenta verso l'alto), la differenza di pressione, lungo il profilo del dicco, è data da
+Indicando con \( \Delta\gamma = \Delta\rho g = (\rho_r-\rho_m)g\) il gradiente di pressione dovuto alla spinta di galleggiamento, \citet{Dahm2000} ha mostrato che in una frattura che si estende verticalmente per una lunghezza di \(2a\) (partendo da \(z=-a\), con z che aumenta verso l'alto), la differenza di pressione, lungo il profilo del dicco, è data da
 
 \begin{equation}
   \label{eq:buoyancy}
@@ -114,7 +114,7 @@ Weertman ha però sviluppato la teoria solo nel caso bidimensionale. \citet{Davi
 
 \begin{equation}
     \label{eq:volume_critico}
-    V_c = \frac{(1-\nu)}{16\mu} \left( \frac{9 \pi^4 K_c^8}{\cos(\theta)\Delta\gamma^5} \right)^{1/3}.
+    V_c = \frac{(1-\nu)}{16\mu} \left( \frac{9 \pi^4 K_c^8}{(\cos(\theta))5\Delta\gamma^5} \right)^{1/3}.
 \end{equation}
 In Eq. \eqref{eq:volume_critico}, l'angolo \(\theta\) indica l'angolo con cui la frattura è inclinata rispetto alla verticale, nel caso più generale in cui questa non fosse disposta verticalmente.
 

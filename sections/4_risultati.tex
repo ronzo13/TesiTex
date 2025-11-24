@@ -119,14 +119,14 @@ Il valore dello strike \(\Phi_f\) è invece lo stesso per tutti e tre i segmenti
     \label{tab:segmenti}
 \end{table}
 
-Per ognuna delle 465 subfaglie \qty{20}{\kilo\meter} \(\times\) \qty{10}{\kilo\meter}, è stato calcolato il tensore di sforzo di ogni punto del dominio. Il comportamento totale del terremoto è stato ricostruito sommando punto per punto lo sforzo calcolato per ogni subfaglia.
+Per ognuna delle 465 subfaglie \qty{20}{\kilo\meter} \(\times\) \qty{10}{\kilo\meter}, è stato calcolato il tensore di sforzo in ogni punto del dominio. Il comportamento totale del terremoto è stato ricostruito sommando punto per punto lo sforzo calcolato per ogni subfaglia.
 Per i parametri elastici usati per il calcolo si fa riferimento a Tab. \ref{tab:costanti}.
 
 
 I valori delle singole componenti degli sforzi, assieme ai valori di \(\sigma_1\) e \(\sigma_3\) sono riportati in Fig. \ref{fig:stress_eq_kly} per una sezione valutata a \(Y=\) \qty{395.85}{\kilo\meter}, passante per il Klyuchevskoy. Lo stesso è stato fatto per una sezione passante per il Krasheninnikov a \(Y=\) \qty{233.45}{\kilo\meter} (Fig. \ref{fig:stress_eq_kra}).
 Gli sforzi prodotti sono, in valore assoluto, dell'ordine di \qty{1e4}{\pascal}.
 
-Lo sforzo principale maggiore (\(\sigma_1\)) e lo sforzo principale minore \(\sigma_3\) vengono riportati in Fig. \ref{fig:diag_eq_kly} per la sezione sul Klyuchevskoy e in Fig. \ref{fig:diag_eq_kly} per il Krasheninnikov.
+Lo sforzo principale maggiore \(\sigma_1\) e lo sforzo principale minore \(\sigma_3\) vengono riportati in Fig. \ref{fig:diag_eq_kly} per la sezione sul Klyuchevskoy e in Fig. \ref{fig:diag_eq_kly} per il Krasheninnikov.
 
 In Fig. \ref{fig:diag_eq_kly} si nota come lo sforzo meno compressivo \(\sigma_3 \) sia orizzontale pressoché lungo tutta la sezione, con una leggera inclinazione che varia con la profondità. Lo sforzo più compressivo \(\sigma_1\) risulta poco inclinato rispetto alla direzione verticale in profondità verso ovest rispetto all'epicentro, mentre verso est risulta maggiormente inclinato. Salendo lungo \(Z\) si nota che i tratti rossi raffiguranti \(\sigma_1\) si accorciano, questo perché cambia la sua orientazione, di cui la figura mostra una proiezione sul piano \(X-Z\).
 Considerazioni simili si applicano per l'orientazione degli sforzi principali visti lungo la sezione passante per il Krasheninnikov (Fig. \ref{fig:diag_eq_kra}). In questo caso, però, entrambi gli sforzi principali \(\sigma_1\) e \(\sigma_3\) appaiono più inclinati rispetto alla Fig. \ref{fig:diag_eq_kly}, presumibilmente per la maggiore vicinanza (circa \qty{150}{\kilo\meter}) all'epicentro del terremoto.
@@ -250,7 +250,7 @@ Tramite il software GeoMapApp 3.7.6 (https://www.geomapapp.org/) è stato realiz
 Risulta quindi che a nord-ovest la zona presenta dei rilievi, seguiti da una depressione, la CKD, per terminare con un'altra zona montuosa verso sud-est.
 I rilievi sono stati modellati come due carichi, mentre la depressione come uno scarico.
 Per farlo sono stati considerati tre blocchi rettangolari, orientati lungo la direzione \(Y'\) (Fig. \ref{fig:assi_strike}) 
-Ad ciascun blocco è stata associata un'altezza \(h\) e una densità \(\rho\).
+A ciascun blocco è stata associata un'altezza \(h\) e una densità \(\rho\).
 I valori sono riportati in Tab. \ref{tab:parametri_blocchi}, insieme alle loro dimensioni.
 La densità è stata scelta uniforme per tutti e tre i blocchi come \(\rho=\) \qty{2700}{\kilogram\per\meter\cubed}, in accordo con il valore medio di densità della crosta continentale \citep{plate_tectonics_book}.
 
