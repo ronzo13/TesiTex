@@ -26,24 +26,24 @@ Terremoti di questo tipo, proprio per la loro sporadicità, sono un importante o
 L'ente statunitense United States Geological Survey (USGS) si è occupato da subito dello studio del terremoto, calcolando gli spostamenti prodotti e il momento sismico tramite un modello \textit{finite fault} (a faglia finita) \citep{usgs2025qw60finitefault}.
 Modelli di questo tipo utilizzano dati riguardanti il movimento del suolo causato dal terremoto (come lo studio di onde sismiche rilevate da stazioni sismografiche e di spostamenti della superficie terrestre) riuscendo  a rappresentare la dimensione della faglia e l'intensità dello slip lungo di essa \citep{usgs_finite_fault}. Un approccio di questo tipo, in cui si studiano gli effetti per arrivare alla causa è detto problema inverso. Tipicamente, un piano di faglia viene diviso in numerose subfaglie di dimensioni minori e tramite il problema inverso si riesce a stabilire lo slip subito da ognuna di esse, andando a ricostruire il comportamento totale della faglia.
 
-Nell'analisi del terremoto in questione il USGS ha analizzato onde sismiche raccolte da stazioni sismografiche situate in tutto il mondo e ha aggiornato il modello nelle settimane seguenti. Il primo miglioramento del modello è stato realizzato andando ad implementare dati provenienti da radar satellitari, raccolti utilizzando il metodo inSAR (Interferometric Synthetic Aperture Radar) \citep{hubbard2025kamchatkaupdates}. Questo metodo consiste nell'utilizzo di onde radio o microonde a una specifica lunghezza d'onda inviate da un satellite sulla superficie terrestre. Diversi punti della superficie riflettono le onde con una fase diversa, che può essere ricavata misurando l'ampiezza dell'onda e può essere rappresentata tramite una mappa di fase. Poiché un terremoto è un evento in grado di andare a modificare la superficie terrestre, è possibile realizzare un interferogramma tramite due immagini ottenute dal satellite, una prima e una dopo l'evento sismico, per studiare così gli spostamenti avvenuti \citep{hubbard2023inSAR}.
-
-Un'ulteriore miglioramento nel modello è stato fatto andando a considerare che la geometria della faglia è quella di una superficie curva e non piana. Per questo motivo il piano della faglia è stato suddiviso in tre segmenti con diverso dip (angolo di immersione). Questo è più piccolo lungo la faglia e cresce in direzione nord-ovest \citep{hubbard2025aftershockupdate}.
-Nello specifico, in Fig. \ref{fig:basemap} viene mostrata una proiezione della distribuzione superficiale dello slip. Il valore massimo raggiunto dallo slip è di \( \sim\) \qty{40}{\meter}. In generale risulta abbastanza contenuto tra la costa e la faglia, senza raggiungere la penisola.
-
-\begin{figure}[H]
+\begin{figure}[!b]
     \centering
     \includegraphics[width=0.7\linewidth]{graphics/basemap.png}
     \caption{Proiezione superficiale dello slip per il terremoto del 29 luglio 2025 in Kamchatka. La scala di colore dal bianco al blu indica l'intensità dello slip. La linea bianca indica il confine tra due placche [preso da \citep{usgs2025qw60finitefault}].}
     \label{fig:basemap}
 \end{figure}
 
+Nell'analisi del terremoto in questione il USGS ha analizzato onde sismiche raccolte da stazioni sismografiche situate in tutto il mondo e ha aggiornato il modello nelle settimane seguenti. Il primo miglioramento del modello è stato realizzato andando ad implementare dati provenienti da radar satellitari, raccolti utilizzando il metodo inSAR (Interferometric Synthetic Aperture Radar) \citep{hubbard2025kamchatkaupdates}. Questo metodo consiste nell'utilizzo di onde radio o microonde a una specifica lunghezza d'onda inviate da un satellite sulla superficie terrestre. Diversi punti della superficie riflettono le onde con una fase diversa, che può essere ricavata misurando l'ampiezza dell'onda e può essere rappresentata tramite una mappa di fase. Poiché un terremoto è un evento in grado di andare a modificare la superficie terrestre, è possibile realizzare un interferogramma tramite due immagini ottenute dal satellite, una prima e una dopo l'evento sismico, per studiare così gli spostamenti avvenuti \citep{hubbard2023inSAR}.
+
+Un'ulteriore miglioramento nel modello è stato fatto andando a considerare che la geometria della faglia è quella di una superficie curva e non piana. Per questo motivo il piano della faglia è stato suddiviso in tre segmenti con diverso dip (angolo di immersione). Questo è più piccolo lungo la faglia e cresce in direzione nord-ovest \citep{hubbard2025aftershockupdate}.
+Nello specifico, in Fig. \ref{fig:basemap} viene mostrata una proiezione della distribuzione superficiale dello slip. Il valore massimo raggiunto dallo slip è di \( \sim\) \qty{40}{\meter}. In generale risulta abbastanza contenuto tra la costa e la faglia, senza raggiungere la penisola.
+
 
 \section{Attività vulcanica in Kamchatka}
 I vulcani sulla superficie terrestre non sono distribuiti casualmente. La maggior parte di questi si trova ai margini dei continenti, lungo catene di isole, o sotto il livello del mare dove formano lunghe catene montuose. In particolare, più della metà dei vulcani attivi si trova nell'oceano Pacifico \citep{usgs_volcanoes_plate_tectonics_1997} e forma quella che viene chiamata ``Cintura di Fuoco", che circonda il Pacifico passando proprio per la Kamchatka (Fig. \ref{fig:fire_ring}).
 Si nota, infatti, come la formazione di catene vulcaniche avvenga principalmente lungo i confini delle placche tettoniche.
 
-\begin{figure}[H]
+\begin{figure}[!t]
     \centering
     \includegraphics[width=0.7\linewidth]{graphics/fire_ring.png}
     \caption{Mappa indicante i confini delle placche e la posizione di diversi vulcani in attività nella Cintura di Fuoco nel Pacifico. I margini divergenti sono indicati tramite linee doppie, quelli convergenti con linee dentate. Gli archi vulcanici si trovano nella zona evidenziata in rosa, rappresentati attraverso linee magenta [preso da \citet{Britannica2025}]}
@@ -53,7 +53,7 @@ Si nota, infatti, come la formazione di catene vulcaniche avvenga principalmente
 La penisola della Kamchatka è tra le regioni con la più alta attività vulcanica del pianeta; attiva da più di 70 milioni di anni (\qty{}{Ma}) \citep{volcan_kam} a causa della subduzione della litosfera oceanica della placca del Pacifico sotto la micro-placca di Okhotsk.
 
 Grazie al processo di subduzione, la placca del Pacifico, immersa ad elevate profondità, rilascia componenti volatili che producono un abbassamento nella temperatura di fusione del mantello. Alla profondità di circa \qty{100}{\kilo\meter} \citep{Shu2022Kamchatka} si ha quindi produzione di magma (Fig. \ref{fig:subduzione_kamchatka}).
-\begin{figure}[H]
+\begin{figure}[t]
     \centering
     \includegraphics[width=0.7\linewidth]{graphics/subduzione_kamchatka.png}
     \caption{Produzione di magma in Kamchatka causata dalla subduzione della placca del Pacifico, con riferimento ai tre fronti vulcanici della regione: Sredinny Range (SR), Central Kamchatka Depression (CKD) e Eastern Volcanic Front (EVF). In particolare si fa riferimento alla subduzione della catena sottomarina Hawaii-Emperor (Hawaii-Emperor Seamount Chain, HESC). Le informazioni aggiuntive riportate, trascurabili in questo lavoro, sono discusse nel dettaglio nell'articolo di \citet{Shu2022Kamchatka} da cui è stata presa la figura.}

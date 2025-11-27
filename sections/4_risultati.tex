@@ -161,7 +161,7 @@ Considerazioni simili si applicano per l'orientazione degli sforzi principali vi
 
 \subsection{Implementazione di uno stress regionale}
 Osservando la regione della Kamchatka, con particolare riferimento alla zona inclusa nel dominio di calcolo definito in precedenza, si riconosce una zona di depressione, corrispondente alla Central Kamchatka Depression (CKD) (Fig. \ref{fig:Kamchatka_volcano_map}). La formazione di una zona di depressione è generalmente legata alla presenza di uno sforzo tettonico estensivo, che provoca l'abbassamento del suolo. Lungo la faglia, corrispondente alla parte orientale del dominio di calcolo, la zona risulta in compressione, per via della subduzione della placca del Pacifico.
-Sforzi tettonici di questo tipo sono dell'ordine di \qty{1e6}{\pascal}.
+Sforzi tettonici di questo tipo sono dell'ordine di \qty{e6}{\pascal}.
 
 
 \begin{figure}[!b]
@@ -296,7 +296,7 @@ Oltre ai carichi appena descritti, sono stati considerati due vulcani Klyuchevsk
 
 Definiti i parametri per i vari carichi è stata calcolata la pressione che questi esercitano sulla superficie come, \(p(x,y) = g \rho h(x,y)\), con \(g=\) \qty{9.8}{\meter\per\second\squared} accelerazione di gravità. Si è quindi risolto il problema di Boussinesq, in cui si determinano gli sforzi prodotti da un carico all'interno di un semi-spazio \citep{Boussinesq_Problem}, dove la pressione \(p(x,y)\) esercitata dal carico è uno dei parametri principali.
 
-Al campo di sforzo regionale sono stati sommati i contributi dovuti alla topografia per il tre blocchi e i due vulcani. Gli sforzi ottenuti dalla topografia hanno valori particolarmente elevati in prossimità della superficie, dell'ordine di \qty{1e7}{\pascal}, ma decadono rapidamente in profondità. Le sezioni del campo diagonalizzato vengono mostrate in Fig. \ref{fig:diag_top_kly} e in Fig. \ref{fig:diag_top_kra}. Si nota come, per entrambe le sezioni, il campo di sforzo sia ruotato rispetto alla configurazione data dallo sforzo puramente regionale, come conseguenza dell'aggiunta della topografia.
+Al campo di sforzo regionale sono stati sommati i contributi dovuti alla topografia per il tre blocchi e i due vulcani. Gli sforzi ottenuti dalla topografia hanno valori particolarmente elevati in prossimità della superficie, dell'ordine di \qty{e7}{\pascal}, ma decadono rapidamente in profondità. Le sezioni del campo diagonalizzato vengono mostrate in Fig. \ref{fig:diag_top_kly} e in Fig. \ref{fig:diag_top_kra}. Si nota come, per entrambe le sezioni, il campo di sforzo sia ruotato rispetto alla configurazione data dallo sforzo puramente regionale, come conseguenza dell'aggiunta della topografia.
 
 \begin{figure}[H]
     \centering
@@ -337,13 +337,7 @@ I punti di calcolo sono distanti centinaia di chilometri dall'epicentro del terr
 
 Una volta calcolato il campo di sforzo prima e dopo il terremoto, è stato possibile simulare le traiettorie di alcuni dicchi e confrontare i loro punti di arrivo. Sono stati presi in esame 8 dicchi, posizionali lungo una retta orientata lungo la direzione \(Y'\) (Fig. \ref{fig:assi_strike}). Nello specifico, i punti di partenza sono stati posizionati a una profondita di \qty{-100}{\kilo\meter}, dove avviene la formazione di magma nel mantello. Le coordinate lungo la direzione E e lungo quella N sono state calcolate dei conseguenza, considerando un angolo di immersione \(\delta = 18^\circ\).
 
-Parametri quali volume del dicco (\(V\)), differenza di densità tra roccia e magna (\(\Delta\rho\)) e resistenza alla frattura (\(K_c\)), sono stati utilizzati per il calcolo delle traiettorie. Sono stati attribuiti gli stessi valori a tutti i dicchi, riportati in \ref{tab:parametri_dicchi}.
-
-I punti di partenza dei dicchi e i loro punti di arrivo, considerando prima il solo campo di sforzo della regione, e aggiungendo poi anche il contributo del terremoto, sono riportati in Tab. \ref{fig:dicco_evoluzione}.
-Come previsto, le traiettorie non subiscono variazioni significative che le portano ad arrestarsi in punti diversi. L'ordine di grandezza con cui le coordinate \(X\) e \(Y\) dei punti di arresto si spostano è di \qty{1e-2}{\kilo\meter}.
-Questi, contestualizzati in un'area vasta come quella in esame, che si estende per \qty{300}{\kilo\meter} lungo est e per \qty{500}{\kilo\meter} lungo nord, risultano poco significativi.
-
-Come previsto, il campo di sforzo del terremoto, nel dominio considerato, risulta troppo debole per cambiare in maniera significativa le orientazioni degli sforzi principali. I dicchi, di conseguenza, non subiscono variazioni considerevoli delle loro traiettorie.
+Parametri quali volume del dicco (\(V\)), differenza di densità tra roccia e magna (\(\Delta\rho\)) e resistenza alla frattura (\(K_c\)), sono stati utilizzati per il calcolo delle traiettorie. Sono stati attribuiti gli stessi valori a tutti i dicchi, riportati in Tab. \ref{tab:parametri_dicchi}.
 
 \begin{table}[H]
     \centering
@@ -359,6 +353,12 @@ Come previsto, il campo di sforzo del terremoto, nel dominio considerato, risult
     \caption{Valori dei parametri associati ai dicchi nella simulazione.}
     \label{tab:parametri_dicchi}
 \end{table}
+
+I punti di partenza dei dicchi e i loro punti di arrivo, considerando prima il solo campo di sforzo della regione, e aggiungendo poi anche il contributo del terremoto, sono riportati in Tab. \ref{tab:confronto_arresto}.
+Come previsto, le traiettorie non subiscono variazioni significative che le portano ad arrestarsi in punti diversi. L'ordine di grandezza con cui le coordinate \(X\) e \(Y\) dei punti di arresto si spostano è di \qty{e-2}{\kilo\meter}.
+Questi, contestualizzati in un'area vasta come quella in esame, che si estende per \qty{300}{\kilo\meter} lungo est e per \qty{500}{\kilo\meter} lungo nord, risultano poco significativi.
+
+Come previsto, il campo di sforzo del terremoto, nel dominio considerato, risulta troppo debole per cambiare in maniera significativa le orientazioni degli sforzi principali. I dicchi, di conseguenza, non subiscono variazioni considerevoli delle loro traiettorie.
 
 \begin{table}[H]
     \centering
