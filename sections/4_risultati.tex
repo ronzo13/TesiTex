@@ -1,6 +1,6 @@
 \chapter{Risultati}
 
-In questo capitolo vengono presentati i risultati delle simulazioni numeriche relative al terremoto di magnitudo \(M_w = 8.8\) del 29 luglio 2025 in Kamchatka. L'obiettivo principale è calcolare il campo di sforzo statico generato dal terremoto per verificare se l'evento abbia potuto influenzare l'attività eruttiva di Klyuchevskoy e Krasheninnikov avvenuta nei giorni successivi. Per simulare il terremoto si usano i parametri di inversione calcolati da \citet{usgs2025qw60finitefault} basati su un modello a faglia finita in cui la faglia è suddivisa in \qty{465}{} subfaglie di lunghezza \(L= \) \qty{20}{\kilo\meter} e larghezza \(W= \) \qty{10}{\kilo\meter}. 
+In questo capitolo vengono presentati i risultati delle simulazioni numeriche relative al terremoto di magnitudo \(\mathrm{M}\,8.8\) del 29 luglio 2025 in Kamchatka. L'obiettivo principale è calcolare il campo di sforzo statico generato dal terremoto per verificare se l'evento abbia potuto influenzare l'attività eruttiva di Klyuchevskoy e Krasheninnikov avvenuta nei giorni successivi. Per simulare il terremoto si usano i parametri di inversione calcolati da \citet{usgs2025qw60finitefault} basati su un modello a faglia finita in cui la faglia è suddivisa in \qty{465}{} subfaglie di lunghezza \(L= \) \qty{20}{\kilo\meter} e larghezza \(W= \) \qty{10}{\kilo\meter}. 
 
 \subsubsection{Definizione del sistema di riferimento}
 Per tutti i risultati presentati si utilizza un sistema di riferimento basato sulle coordinate East-North-Up (ENU), dove l'asse delle ascisse è posto lungo la direzione est, quello delle ordinate lungo il nord e l'altezza viene considerata positiva verso l'alto. L'origine del sistema di riferimento è posizionata sull'epicentro, all'altezza del livello del mare. Le coordinate dei vulcani Klyuchevskoy e Krasheninnikov in tale sistema di riferimento sono riportate in Tab. \ref{tab:coordinate_vulcani}.
@@ -65,7 +65,7 @@ In Fig. \ref{fig:spostamenti_orizzontali} si nota come gli spostamenti orizzonta
 \begin{figure}[!b]
     \centering
     \includegraphics[width=1\linewidth]{plots/spostamenti_orizzontali.pdf}
-    \caption{Spostamenti orizzontali prodotti dal terremoto del 30 luglio 2025 in Kamchatka. A sinistra il campo ottenuto con i dati presi da \citet{usgs2025qw60finitefault}, a destra il campo ottenuto con un modello a faglia finita basato su dislocazioni rettangolari. L'epicentro è indicato dal punto rosso in posizione \((0,0)\). Il punto giallo indica la posizione del Klyuchevskoy, quello verde del Krasheninnikov.}
+    \caption{Spostamenti orizzontali prodotti dal terremoto del 29 luglio 2025 in Kamchatka. A sinistra il campo ottenuto con i dati presi da \citet{usgs2025qw60finitefault}, a destra il campo ottenuto con un modello a faglia finita basato su dislocazioni rettangolari. L'epicentro è indicato dal punto rosso in posizione \((0,0)\). Il punto giallo indica la posizione del Klyuchevskoy, quello verde del Krasheninnikov.}
     \label{fig:spostamenti_orizzontali}
 \end{figure}
 
@@ -77,7 +77,7 @@ Il modello adottato può essere considerato valido, in grado di riprodurre effic
 \begin{figure}[t]
     \centering
     \includegraphics[width=1\linewidth]{plots/spostamenti_verticali.pdf}
-    \caption{Spostamenti verticali prodotti dal terremoto del 30 luglio 2025 in Kamchatka. A sinistra il campo ottenuto con i dati presi da \citet{usgs2025qw60finitefault}, a destra il campo ottenuto con un modello a faglia finita basato su dislocazioni rettangolari.}
+    \caption{Spostamenti verticali prodotti dal terremoto del 29 luglio 2025 in Kamchatka. A sinistra il campo ottenuto con i dati presi da \citet{usgs2025qw60finitefault}, a destra il campo ottenuto con un modello a faglia finita basato su dislocazioni rettangolari.}
     \label{fig:spostamenti_verticali}
 \end{figure}
 
@@ -94,7 +94,7 @@ Lo scopo principale del lavoro è vedere come il campo di sforzo cambia a seguit
 Si è quindi calcolato un modello pre-sismico del campo di sforzo della regione, basato sulle caratteristiche tettoniche della regione e sulla topografia. A questo si aggiunge il campo prodotto dal terremoto per ottenere il campo totale post-sismico.
 
 Gli sforzi sono stati calcolati su una griglia tridimensionale discreta, il cui dominio è stato indicato all'inizio di questo capitolo.
-Lo scopo delle figure realizzate in questa sezione è di mostrare il campo di sforzo su una sezione dell'asse \(Y=N\), con particolare interesse sulle direzioni dell'asse di sforzo più compressivo e di quello meno compressivo, ottenuti dalla diagonalizzazione del tensore di sforzo, eseguita su ogni punto del dominio. In particolare, vengono mostrate le sezioni a \(Y =\) \qty{395.85}{\kilo\meter} e \(Y =\) \qty{233.45}{\kilo\meter}, che attraversano rispettivamente il Klyuchevskoy e il Krasheninnikov.
+Lo scopo delle figure realizzate in questa sezione è di mostrare il campo di sforzo su una sezione dell'asse \(Y=N\), con particolare interesse sulle direzioni dell'asse di sforzo più compressivo e di quello meno compressivo, ottenuti dalla diagonalizzazione del tensore di sforzo, eseguita su ogni punto del dominio. In particolare, vengono mostrate le sezioni a \(Y=\) \qty{395.85}{\kilo\meter} e \(Y=\) \qty{233.45}{\kilo\meter}, che attraversano rispettivamente il Klyuchevskoy e il Krasheninnikov.
 
 La convenzione usata assume sforzo positivo compressivo e sforzo negativo estensivo.
 Riguardo la diagonalizzazione del tensore di sforzo si assume che \( \sigma_1 \ge \sigma_2 \ge \sigma_3 \), dove \(\sigma_1\) rappresenta lo sforzo principale massimo (più compressivo) e \(\sigma_3\) quello minimo (meno compressivo).
@@ -124,7 +124,7 @@ Per i parametri elastici usati per il calcolo si fa riferimento a Tab. \ref{tab:
 
 
 I valori delle singole componenti degli sforzi, assieme ai valori di \(\sigma_1\) e \(\sigma_3\) sono riportati in Fig. \ref{fig:stress_eq_kly} per una sezione valutata a \(Y=\) \qty{395.85}{\kilo\meter}, passante per il Klyuchevskoy. Lo stesso è stato fatto per una sezione passante per il Krasheninnikov a \(Y=\) \qty{233.45}{\kilo\meter} (Fig. \ref{fig:stress_eq_kra}).
-Gli sforzi prodotti sono, in valore assoluto, dell'ordine di \qty{1e4}{\pascal}.
+Gli sforzi prodotti sono, in valore assoluto, dell'ordine di \qty{e4}{\pascal}.
 
 Lo sforzo principale maggiore \(\sigma_1\) e lo sforzo principale minore \(\sigma_3\) vengono riportati in Fig. \ref{fig:diag_eq_kly} per la sezione sul Klyuchevskoy e in Fig. \ref{fig:diag_eq_kly} per il Krasheninnikov.
 
@@ -218,7 +218,7 @@ dove \(\sigma'\) è il tensore di sforzo nel sistema ruotato, \(\sigma \) quello
 
 Dopo aver ruotato lo sforzo per ogni punto del dominio di calcolo, è stato diagonalizzato. Le sezioni per \(Y=\) \qty{395.85}{\kilo\meter} passante per il Klyuchevskoy e per \(Y=\) \qty{233.45}{\kilo\meter} passante per il Krasheninnikov sono riportate rispettivamente in Fig. \ref{fig:diag_reg_kly} e in Fig. \ref{fig:diag_reg_kra}.
 
-In Fig. \ref{fig:diag_reg_kly} si nota come \(\sigma_3\) sia approssimativamente orizzontale (parallelo all'asse \(X\)) tra \(X=\)\,\qty{-200}{\kilo\meter} e \(X=\)\,\qty{50}{\kilo\meter}.
+In Fig. \ref{fig:diag_reg_kly} si nota come \(\sigma_3\) sia approssimativamente orizzontale (parallelo all'asse \(X\)) tra \(X=\) \qty{-200}{\kilo\meter} e \(X=\) \qty{50}{\kilo\meter}.
 Proseguendo fino a \(X=\) \qty{100}{\kilo\meter}, limite del dominio di calcolo lungo \(X\), è \(\sigma_1\) a essere orientato orizzontalmente.
 Quando uno dei due sforzi principali è diretto orizzontalmente, l'altro risulta disposto perpendicolarmente, in direzione verticale, oppure inclinato nel piano \(X-Y\). In questo caso la sua proiezione sul piano \(X-Z\) appare ancora orizzontale in figura, ma il segmento risulta più corto rispetto all'altro asse principale.
 
