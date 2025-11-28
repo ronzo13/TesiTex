@@ -29,10 +29,10 @@ Per una sorgente puntiforme, data la geometria della sorgente (definita in Fig. 
 \end{figure}
 
 
-Quando la geometria della dislocazione non può essere trascurata (ad esempio nel caso in cui si stia studiando gli effetti prodotti da un terremoto vicino al suo epicentro) si fa riferimento a dislocazioni rettangolari finite. Per studiare gli spostamenti prodotti da tale dislocazione è necessario integrare lungo il piano di faglia (che indica la dislocazione rettangolare finita) le soluzioni ottenute considerando sorgenti puntiformi. I metodi con cui vengono svolti questi calcoli e le soluzioni sono ampiamente noti e non vengono qui riportati (ma sono disponibili ei lavori di Okada (\citeyear{okada1985surface,okada1992internal}) e nel testo di \citet{segall2010}). A partire dal calcolo degli spostamenti è possibile ricavare anche gli sforzi e le deformazioni prodotte dalla dislocazione.
+Quando la geometria della dislocazione non può essere trascurata (ad esempio nel caso in cui si stia studiando gli effetti prodotti da un terremoto vicino al suo epicentro) si fa riferimento a dislocazioni rettangolari finite. Per studiare gli spostamenti prodotti da tale dislocazione è necessario integrare lungo il piano di faglia (che indica la dislocazione rettangolare finita) le soluzioni ottenute considerando sorgenti puntiformi. I metodi con cui vengono svolti questi calcoli e le soluzioni sono ampiamente noti e non vengono qui riportati (ma sono disponibili nei lavori di Okada (\citeyear{okada1985surface,okada1992internal}) e nel testo di \citet{segall2010}). A partire dal calcolo degli spostamenti è possibile ricavare anche gli sforzi e le deformazioni prodotte dalla dislocazione.
 
 
-\subsection{Correzione analitiche e numeriche al modello di Okada}
+\subsection{Correzioni analitiche e numeriche al modello di Okada}
 % penso che così vada bene, il mio problema però è il seguente: come faccio a spiegare i problemi nelle soluzioni di okada se non ho spiegato come okada ricava queste soluzioni? forse è esagerato e non andrebbe fatto? ha senso lasciare le cose solo con il paragrafo precedente?
 Le soluzioni per dislocazioni rettangolari raccolte da Okada (\citeyear{okada1985surface,okada1992internal}) presentano però alcune limitazioni, come evidenziato da \citet{Nikkhoo2017CDM}. In questo paragrafo si vanno a ripercorrere i problemi e le soluzioni proposte da \citet{Nikkhoo2017CDM}, in quanto le simulazioni numeriche di cui si discutono i risultati nel \textit{Capitolo 4} utilizzano proprio l'implementazione MATLAB da loro sviluppata.
 
@@ -55,7 +55,7 @@ Tramite questo ragionamento \citet{Nikkhoo2017CDM} sono riusciti a calcolare gli
 
 La seconda limitazione delle soluzioni di Okada (\citeyear{okada1985surface,okada1992internal}) riguarda la mancanza di un grado di liberta rotazionale nella geometria della RD. Questa è definita con entrambe le coppie di lati parallele alla superficie libera, con la possibilità di una delle due di immergersi di un certo angolo \(\delta\), il dip. Così facendo una coppia di lati non risulta più parallela alla superficie, mentre l'altra continua ad esserlo. \citep{Nikkhoo2017CDM} aggiungono un grado di libertà rotazionale alla geometria della faglia. Questo viene detto angolo di \textit{plunge} (indicato con \(\theta\) in Fig. \ref{fig:Nikkhoo_2}) ed è definito come l'angolo tra la superficie libera e il lato superiore della RD.
 
-I miglioramenti apportati da \citet{Nikkhoo2017CDM} permettono quindi di calcolare spostamenti e campi di sforzo per un half-space, sia in un superficie che in profondità, risolvendo i problemi delle singolarità e della mancanza di un gradi di libertà rotazionale presenti nelle soluzioni di Okada (\citeyear{okada1985surface,okada1992internal}).
+I miglioramenti apportati da \citet{Nikkhoo2017CDM} permettono quindi di calcolare spostamenti e campi di sforzo per un half-space, sia in superficie che in profondità, risolvendo i problemi delle singolarità e della mancanza di un grado di libertà rotazionale presenti nelle soluzioni di Okada (\citeyear{okada1985surface,okada1992internal}).
 
 
 \begin{figure}[H]
