@@ -332,13 +332,16 @@ I punti di calcolo sono distanti centinaia di chilometri dall'epicentro del terr
 \end{figure}
 
 
-
 \section{Influenza sulla risalita del magma}
 
-Una volta calcolato il campo di sforzo prima e dopo il terremoto, è stato possibile simulare le traiettorie di alcuni dicchi e confrontare i loro punti di arrivo. Sono stati presi in esame 8 dicchi, posizionali lungo una retta orientata lungo la direzione \(Y'\) (Fig. \ref{fig:assi_strike}). Nello specifico, i punti di partenza sono stati posizionati a una profondita di \qty{-100}{\kilo\meter}, dove avviene la formazione di magma nel mantello. Le coordinate lungo la direzione E e lungo quella N sono state calcolate dei conseguenza, considerando un angolo di immersione \(\delta = 18^\circ\).
+Una volta calcolato il campo di sforzo prima e dopo il terremoto, è stato possibile simulare le traiettorie di alcuni dicchi e confrontare i loro punti di arrivo. Sono stati presi in esame 8 dicchi, posizionali lungo una retta orientata lungo la direzione \(Y'\) (Fig. \ref{fig:assi_strike}).
+
+Nello specifico, i punti di partenza sono stati posizionati a una profondita di \qty{-100}{\kilo\meter}, dove avviene la formazione di magma nel mantello. Le coordinate lungo la direzione E e lungo quella N sono state calcolate dei conseguenza, considerando un angolo di immersione \(\delta = 18^\circ\).
+
 Parametri quali volume del dicco (\(V\)), differenza di densità tra roccia e magna (\(\Delta\rho\)) e resistenza alla frattura (\(K_c\)), sono stati utilizzati per il calcolo delle traiettorie. Sono stati attribuiti gli stessi valori a tutti i dicchi, riportati in Tab. \ref{tab:parametri_dicchi}.
 
-\begin{table}[H]
+\vspace*{0.3cm}
+\begin{table}[!htbp]
     \centering
     \begin{tabular}{cc}
         \toprule
@@ -352,8 +355,17 @@ Parametri quali volume del dicco (\(V\)), differenza di densità tra roccia e ma
     \caption{Valori dei parametri associati ai dicchi nella simulazione.}
     \label{tab:parametri_dicchi}
 \end{table}
+\vspace*{0.2cm}
 
-\begin{table}[!b]
+l percorso di risalita dei dicchi, calcolato nel campo di sforzo pre-sismico, è riportato in Fig. \ref{traj_preEq}. Per il post-sismico le traiettorie sono riportate in Fig \ref{traj_postEq}. Tra le due figure non si nota una differenza nei percorsi di risalita.
+
+I punti di partenza dei dicchi e i loro punti di arrivo, considerando prima il solo campo di sforzo della regione, e aggiungendo poi anche il contributo del terremoto, sono riportati in Tab. \ref{tab:confronto_arresto}. 
+Come previsto, le traiettorie non subiscono variazioni significative che le portano ad arrestarsi in punti diversi. L'ordine di grandezza con cui le coordinate \(X\) e \(Y\) dei punti di arresto si spostano è di \qty{e-2}{\kilo\meter}.
+Questi, contestualizzati in un'area vasta come quella in esame, che si estende per \qty{300}{\kilo\meter} lungo est e per \qty{500}{\kilo\meter} lungo nord, risultano poco significativi.
+
+Riassumendo, il campo di sforzo del terremoto, nel dominio considerato, risulta troppo debole per cambiare in maniera significativa le orientazioni degli sforzi principali. I dicchi, di conseguenza, non subiscono variazioni considerevoli delle loro traiettorie. La differenza tra i punti di arresto nel caso pre-sismico e in quello post-sismico è al più di qualche decina di metri.
+
+\begin{table}[!htbp]
     \centering
     \resizebox{\textwidth}{!}{
     \begin{tabular}{cccccccccc}
@@ -383,8 +395,16 @@ Parametri quali volume del dicco (\(V\)), differenza di densità tra roccia e ma
     \label{tab:confronto_arresto}
 \end{table}
 
-I punti di partenza dei dicchi e i loro punti di arrivo, considerando prima il solo campo di sforzo della regione, e aggiungendo poi anche il contributo del terremoto, sono riportati in Tab. \ref{tab:confronto_arresto}.
-Come previsto, le traiettorie non subiscono variazioni significative che le portano ad arrestarsi in punti diversi. L'ordine di grandezza con cui le coordinate \(X\) e \(Y\) dei punti di arresto si spostano è di \qty{e-2}{\kilo\meter}.
-Questi, contestualizzati in un'area vasta come quella in esame, che si estende per \qty{300}{\kilo\meter} lungo est e per \qty{500}{\kilo\meter} lungo nord, risultano poco significativi.
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=1\linewidth]{plots/traj_preEQ}
+    \caption{Traiettorie (blu) percorse dai dicchi nel campo di sforzo pre-sismico. La posizione in superficie del vulcano Klyuchevskoy è indicata con un punto rosso, quella del Krasheninnikov con un punto verde. I parametri che caratterizzano i dicchi sono riportati in Tab. \ref{tab:parametri_dicchi}.}
+    \label{traj_preEq}
+\end{figure}
 
-Come previsto, il campo di sforzo del terremoto, nel dominio considerato, risulta troppo debole per cambiare in maniera significativa le orientazioni degli sforzi principali. I dicchi, di conseguenza, non subiscono variazioni considerevoli delle loro traiettorie.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{plots/traj_postEQ}
+    \caption{Traiettorie (blu) percorse dai dicchi nel campo di sforzo post-sismico. La posizione in superficie del vulcano Klyuchevskoy è indicata con un punto rosso, quella del Krasheninnikov con un punto verde. I parametri che caratterizzano i dicchi sono riportati in Tab. \ref{tab:parametri_dicchi}.}
+    \label{traj_postEq}
+\end{figure}
