@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[12pt,a4paper,twoside,openright]{report}
 \input{header}
 
 % \includeonly{sections/2_generale}
@@ -6,10 +6,11 @@
 \begin{document}
 
 \include{frontespizio}
-
+\thispagestyle{empty} \cleardoublepage
 \include{sections/abstract}
-
+\thispagestyle{empty} \cleardoublepage
 \tableofcontents
+
 \include{sections/0_introduzione}
 \include{sections/1_nozioni}
 \include{sections/2_regione}
